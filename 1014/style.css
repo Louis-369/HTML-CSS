@@ -1,0 +1,12 @@
+section {
+  margin: 100px;
+}
+.login-link {
+  background-color: #064c8c;
+  color: white;
+  border-radius: 7px;
+  padding: 12px 20px 12px 20px;
+}
+.green-word {
+  color: #13ab67;
+}
