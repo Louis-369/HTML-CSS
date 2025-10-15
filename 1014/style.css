@@ -10,3 +10,6 @@ section {
 .green-word {
   color: #13ab67;
 }
+p {
+  letter-spacing: 0;
+}

@@ -1,0 +1,23 @@
+section {
+  margin: 100px;
+}
+.card {
+  border-radius: 7px;
+  padding: 20px;
+  width: 300px;
+  background-color: #d8bc6d;
+}
+h2 {
+  font-size: 36px;
+}
+img {
+  width: 260px;
+  border-radius: 7px;
+}
+.buy-link {
+  background-color: #064c8c;
+  color: white;
+  padding: 2px;
+  text-decoration: none;
+  border-radius: 7px;
+}

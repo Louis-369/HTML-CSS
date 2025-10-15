@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="" content="" />
+    <title>table practice</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: middle;
+      }
+      th {
+        background-color: #f6f2f200;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        年齡統計表
+      </caption>
+      <colgroup>
+         <col span="1" style="background-color: rgb(53, 71, 237);">
+         <col span="2" style="background-color: rgb(83, 190, 190);" />
+         <col span="3" style="background-color: rgb(205, 205, 25);" />
+      <thead>
+        <tr>
+          <th>性別</th>
+          <th>姓名</th>
+          <th>電話</th>
+          <th>信箱</th>
+          <th>興趣</th>
+          <th>年齡</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2">男</th>
+          <td>作為戰</td>
+          <td>098287374874</td>
+          <td>qopekdopqkd@gmail.com</td>
+          <td>打電動</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th rowspan="2">女</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <th colspan="5">年齡平均值</th>
+        <td>18</td>
+      </tfoot>
+    </table>
+  </body>
+</html>
+<!-- table 練習 -->
