@@ -9,12 +9,123 @@
   <body>
     <section>
       <!-- button放在form裡面預設為submit -->
-      <form action="#" method="post">
+      <!-- method:get(填寫的東西會在網址上 ？後面)及post -->
+      <!-- 搜尋欄可以用get顯示出來不重要 登入頁面用post -->
+      <form action="#" method="get">
         <h2>登入頁面</h2>
-        <input type="text" placeholder="Account" />
+        <!-- <label for="id"使用id因為頁面唯 -->
+        <label>
+          帳號
+          <input type="text" name="Account" placeholder="帳號總知道吧" />
+        </label>
         <br />
-        <input type="text" placeholder="Password" />
+        <label>
+          密碼
+          <input
+            type="password"
+            name="Password"
+            placeholder="你不會忘記密碼了吧？"
+          />
+        </label>
         <br />
+        <label>
+          年齡
+          <input type="number" name="number" placeholder="您多老" />
+        </label>
+        <br />
+        <label>
+          E-mail
+          <input type="email" name="email" placeholder="Ｅ-mail拿來" />
+        </label>
+        <br />
+        <label>
+          檔案
+          <input type="file" name="file" placeholder="檔案" />
+        </label>
+        <br />
+        <label>
+          顏色
+          <input type="color" name="color" placeholder="color" />
+        </label>
+        <div>
+          <p>國家</p>
+          <!-- 若input做radio單選要用name做群組 -->
+          <!-- 若input做radio或checkbox預設勾選可用checked屬性 -->
+          <label>
+              <input
+              type="radio"
+              name="country"
+              id=""
+              value="Taiwan"
+              />台灣
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="country"
+              id=""
+              value="America"
+            >美國</input>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="country"
+              id=""
+              value="Japan"
+            >日本
+          </label>
+        </div>
+        <div>
+          <p>去過的國家</p>
+          <label
+            ><input
+              type="checkbox"
+              name="been"
+              id=""
+              value="Taiwan"
+              checked
+            />台灣
+            </label>
+          <label
+            ><input
+              type="checkbox"
+              name="been"
+              id=""
+              value="America"
+            />美國</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="been"
+              id=""
+              value="Japan"
+            />日本</label
+          >
+        </div>
+        <textarea name="story" id="" placeholder="請輸入文本" cols="30" rows="10">
+        </textarea>
+        <br>  
+         <div>
+            <label>
+                食物
+                <select name="food" id="">
+                    <option value="" disabled selected hidden >該選擇了</option>
+                    <optgroup label="喝ㄉ">
+                        <option value="water">水</option>
+                        <option value="cola">可樂</option>
+                        <option value="coffee">咖啡</option>
+                    </optgroup>
+                    <optgroup label="吃ㄉ">
+                        <option value="noodle">面</option>
+                        <option value="rice">飯</option>
+                        <option value="poop">大便💩</option>
+                    </optgroup>
+            </select>
+            </label>
+         </div>
+        <!--input image跟submit一樣  -->
         <button type="submit">登入</button>
         <br />
         <button type="reset">清除</button>
