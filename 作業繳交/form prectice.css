@@ -1,4 +1,75 @@
+head,
+body {
+  background-color: #f0ebf8;
+}
 /* 可以先設背景色看有無其他爆表 */
 form {
   margin: 0 auto;
+  width: 640px;
+  text-align: left;
+  padding: 12px;
+}
+
+section {
+  margin: 12px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 640px;
+  border: 1px solid #dadce0;
+}
+.option-section {
+  padding: 12px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+div {
+  width: 640px;
+  padding: 12px;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+label {
+  padding: 12px 0 16px 12px;
+}
+input {
+  outline: none;
+}
+
+.head-div {
+  background-color: #673ab7;
+  border-radius: 8px 8px 0 0;
+  height: 10px;
+  padding: 0;
+}
+
+.titile-div {
+  margin-top: 12px;
+}
+.gray-top {
+  border-top: 1px solid #dadce0;
+  padding: 0;
+}
+.red-asterisk {
+  color: #d93025;
+}
+.gray-word {
+  color: #5f6368;
+}
+.gray-bottom {
+  background-color: #0000001f;
+  height: 1px;
+  width: 600px;
+  padding: 0;
+}
+.gray-short-bottom {
+  background-color: #0000001f;
+  height: 1px;
+  width: 170px;
+  padding: 0;
 }

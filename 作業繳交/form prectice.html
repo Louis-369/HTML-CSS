@@ -4,6 +4,160 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google表單切版練習</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="form prectice.css" />
   </head>
-  <body></body>
+  <body>
+    <form action="#" method="get" z target="_self">
+      <section>
+        <div class="head-div"></div>
+        <div class="title-div">
+          <h1>F2E02表單練習</h1>
+          <p>僅供新尖兵 F2E02 表單切版練習作業</p>
+        </div>
+        <div class="gray-top"></div>
+        <div>
+          <a
+            href="https://accounts.google.com/Login?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSeRMAUDqY6GEPiHotfXZQLvGOQgB1nLfxA_TW-uwlC5vb8CWQ%2Fviewform%3Ffbzx%3D1101166514507782932"
+            >登入Google</a
+          >
+          <span class="gray-word">即可儲存進度。</span>
+          <a href="#">了解詳情</a>
+        </div>
+
+        <div class="gray-top"></div>
+        <div>
+          <p class="red-asterisk">* 表示必填</p>
+        </div>
+      </section>
+      <section class="option-section">
+        <label for="call">姓名</label>
+        <span class="red-asterisk">*</span>
+        <div>
+          <input
+            type="text"
+            name="name"
+            id="call"
+            required
+            placeholder="您的回答"
+          />
+        </div>
+        <div class="gray-bottom"></div>
+      </section>
+      <section class="option-section">
+        <label for="email">信箱</label>
+        <span class="red-asterisk">*</span>
+        <div>
+          <input type="email" id="email" placeholder="您的回答" />
+        </div>
+        <div class="gray-bottom"></div>
+      </section>
+      <section class="option-section">
+        <label for="birthday">生日</label>
+        <div>
+          <input type="date" id="birthday" placeholder="您的回答" />
+        </div>
+        <div class="gray-short-bottom"></div>
+      </section>
+      <section class="option-section">
+        <label for="whisper">想跟老師說悄悄話</label>
+        <div>
+          <input type="text" id="whisper" placeholder="您的回答" />
+        </div>
+        <div class="gray-bottom"></div>
+      </section>
+      <section class="option-section">
+        <label for="">顏色</label>
+        <div>
+          <input type="radio" name="color" id="yellow" value="yellow" /> 黃
+        </div>
+        <div>
+          <input type="radio" name="color" id="green" value="green" /> 綠
+        </div>
+        <div><input type="radio" name="color" id="red" value="red" /> 紅</div>
+      </section>
+      <section class="option-section">
+        <label for="">喜歡吃的飲食類型</label>
+        <div>
+          <input
+            type="checkbox"
+            name="food-type"
+            value="Chinese cuisine"
+            id=""
+          />
+          中式
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="food-type"
+            value="Western cuisine"
+            id=""
+          />
+          義式
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="food-type"
+            value="Japanese cuisine"
+            id=""
+          />
+          日式
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="food-type"
+            value="Korean cuisine"
+            id=""
+          />
+          韓式
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="food-type"
+            value="Arerican cuisine"
+            id=""
+          />
+          美式
+        </div>
+        <div>
+          <input type="checkbox" name="food-type" value="Thai cuisine" id="" />
+          泰式
+        </div>
+      </section>
+      <section class="option-section">
+        <label>
+          最想去的國家
+          <div>
+            <select name="country" id="">
+              <option value="" disabled>選擇</option>
+              <optgroup label="亞洲">
+                <option value="">日本</option>
+                <option value="">韓國</option>
+                <option value="">泰國</option>
+              </optgroup>
+              <optgroup label="歐洲">
+                <option value="">德國</option>
+                <option value="">英國</option>
+              </optgroup>
+              <optgroup label="北美洲">
+                <option value="">加拿大</option>
+                <option value="">美國</option>
+              </optgroup>
+            </select>
+          </div>
+        </label>
+      </section>
+      <button type="submit">提交</button>
+      <button type="reset">清除表單</button>
+    </form>
+  </body>
+  <footer>
+    <div>請勿利用Google 表單送出密碼。</div>
+    <div>這份表單是在 五倍紅賣石程式資訊教育股份有限公司中建立。</div>
+    <div>這份表單很可疑嗎？報告</div>
+  </footer>
 </html>
