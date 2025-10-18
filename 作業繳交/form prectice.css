@@ -18,13 +18,9 @@ section {
   width: 640px;
   border: 1px solid #dadce0;
 }
-.option-section {
-  padding: 12px;
-  margin-bottom: 12px;
-}
 
 h1 {
-  font-size: 24px;
+  font-size: 32px;
 }
 
 div {
@@ -43,10 +39,19 @@ input {
   outline: none;
 }
 
-span {
-  float: right;
-  color: #673ab7;
+footer {
+  font-size: 12px;
 }
+
+.option-section {
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+img {
+  margin: auto;
+}
+
 .head-div {
   background-color: #673ab7;
   border-radius: 8px 8px 0 0;
@@ -55,6 +60,10 @@ span {
 }
 
 .titile-div {
+  margin-top: 12px;
+}
+
+.title-detail {
   margin-top: 12px;
 }
 .gray-top {
@@ -98,4 +107,13 @@ span {
   background-color: #f0ebf8;
   border: none;
   line-height: 36px;
+}
+.reset {
+  float: right;
+  color: #673ab7;
+}
+.img-link {
+  display: inline-block;
+  justify-content: center;
+  opacity: 0.55;
 }
