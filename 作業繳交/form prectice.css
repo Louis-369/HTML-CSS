@@ -3,7 +3,8 @@ body {
   background-color: #f0ebf8;
 }
 /* 可以先設背景色看有無其他爆表 */
-form {
+form,
+footer {
   margin: 0 auto;
   width: 640px;
   text-align: left;
@@ -19,6 +20,7 @@ section {
 }
 .option-section {
   padding: 12px;
+  margin-bottom: 12px;
 }
 
 h1 {
@@ -41,6 +43,10 @@ input {
   outline: none;
 }
 
+span {
+  float: right;
+  color: #673ab7;
+}
 .head-div {
   background-color: #673ab7;
   border-radius: 8px 8px 0 0;
@@ -72,4 +78,24 @@ input {
   height: 1px;
   width: 170px;
   padding: 0;
+}
+.footer-center {
+  text-align: center;
+  color: #5f6368;
+}
+#report,
+.password-warn {
+  color: #5f6368;
+}
+.submit {
+  padding: 0px 24px;
+  color: #fff;
+  background-color: #673ab7;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.button-section {
+  background-color: #f0ebf8;
+  border: none;
+  line-height: 36px;
 }

@@ -48,7 +48,7 @@
         <label for="email">信箱</label>
         <span class="red-asterisk">*</span>
         <div>
-          <input type="email" id="email" placeholder="您的回答" />
+          <input type="email" id="email" required placeholder="您的回答" />
         </div>
         <div class="gray-bottom"></div>
       </section>
@@ -151,13 +151,25 @@
           </div>
         </label>
       </section>
-      <button type="submit">提交</button>
-      <button type="reset">清除表單</button>
+      <section class="button-section">
+        <button type="submit" class="submit">提交</button>
+        <span><button type="reset" class="reset">清除表單內容</button></span>
+      </section>
     </form>
   </body>
   <footer>
-    <div>請勿利用Google 表單送出密碼。</div>
-    <div>這份表單是在 五倍紅賣石程式資訊教育股份有限公司中建立。</div>
-    <div>這份表單很可疑嗎？報告</div>
+    <div class="password-warn">請勿利用Google表單送出密碼。</div>
+    <div class="footer-center">
+      這份表單是在五倍紅賣石程式資訊教育股份有限公司中建立。
+    </div>
+    <div class="footer-center">
+      這份表單很可疑嗎？
+      <a
+        href="https://drive.google.com/abuse?id=AKkXjoydXWY0mgYIjdBkcdDZLucty17BSF7IBJtYLVLaa39SegSoJEHHs-07XbfRApdQoJAK6ILK0OitJ556aac:0&amp;docurl=https://docs.google.com/forms/d/e/1FAIpQLSeRMAUDqY6GEPiHotfXZQLvGOQgB1nLfxA_TW-uwlC5vb8CWQ/viewform"
+        target="_blank"
+        id="report"
+        >報告</a
+      >
+    </div>
   </footer>
 </html>
