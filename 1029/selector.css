@@ -1,0 +1,23 @@
+div.box-1 {
+  color: coral;
+}
+
+/* 層疊式宣告 */
+.new-list li {
+  border: 1px solid navy;
+}
+.new-list,
+.new-li {
+  border: 1px solid navy;
+}
+
+/* 親代選取器＋ 必須緊接著的第一項 */
+.item + .item {
+  border-top: 1px solid palevioletred;
+}
+
+/* 親代選取器～ 同一層的所有 */
+
+div + p {
+  background-color: rgb(147, 255, 74);
+}
