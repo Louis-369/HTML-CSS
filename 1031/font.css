@@ -1,0 +1,68 @@
+a {
+  display: inline-block;
+  background: #92e9ff;
+  line-height: 64px;
+}
+.navigation-nav {
+  background-color: #e8be5e;
+  text-align: center;
+}
+
+.bg-img {
+  height: 600px;
+  background-image: url("https://www.ghibli.jp/gallery/mononoke021.jpg"),
+    url("https://www.ghibli.jp/gallery/mononoke022.jpg"),
+    linear-gradient(to bottom, #1a2843, #163559);
+  background-size: 100px 100px, 300px 200px, cover;
+  background-position: 10px center, bottom 40px right 100px, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+
+  /* background: url("https://www.ghibli.jp/gallery/mononoke021.jpg") 10px center /
+      100px 100px no-repeat,
+    url("https://www.ghibli.jp/gallery/mononoke022.jpg") right 100px bottom 40px /
+      300px 200px no-repeat,
+    linear-gradient(to bottom, #1a2843, #163559) 0 0 / 100% 100% no-repeat; */
+}
+.float-card {
+  padding: 30px;
+  background-color: #b7d1ed;
+}
+.float-text {
+  background-color: #6891cd;
+}
+.float-card:nth-of-type(even) {
+  text-align: right;
+  background-color: #9387e0;
+}
+.float-img {
+  width: 400px;
+  float: left;
+  margin: 0 40px 0 0;
+}
+.float-card:nth-of-type(even) .float-img {
+  float: right;
+  margin: 0 0 0 40px;
+}
+.clear:nth-of-type(even) {
+  clear: both;
+}
+.box-warp {
+  width: 300px;
+}
+
+.box {
+  background-color: brown;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  float: right;
+}
+.box:nth-of-type(3n + 1) {
+  width: 180px;
+  height: 180px;
+  float: left;
+}
+
+.box:nth-of-type(6n + 4) {
+  float: right;
+}
