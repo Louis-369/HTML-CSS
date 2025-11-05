@@ -1,0 +1,105 @@
+.border-box {
+  width: 300px;
+  height: 300px;
+  color: darkgoldenrod;
+  border-width: 10px;
+  margin: 10px;
+}
+
+.name-filed {
+  border-radius: 4px;
+  outline: 2px solid rgb(82, 78, 78);
+}
+.name-filed:focus {
+  outline: 2px solid rgb(255, 0, 0);
+}
+.pic {
+  list-style-type: decimal;
+  /* list-style-image: url("https://stickershop.line-scdn.net/stickershop/v1/product/28429836/LINEStorePC/main.png?20190801"); */
+  list-style-position: inside;
+  list-style-type: "🥺";
+}
+.box-warp {
+  font-size: 0;
+}
+.box {
+  display: inline-block;
+  width: 300px;
+  font-size: 16px;
+}
+
+.box1 {
+  background-color: #edde72;
+}
+.box2 {
+  background-color: #5fc2c9;
+}
+.box3 {
+  background-color: #d895e3;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+h2 {
+  font-weight: bold;
+}
+.poular-product {
+  width: 960px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 0px;
+}
+.card {
+  display: inline-block;
+  border-radius: 8px;
+  width: 300px;
+  vertical-align: top;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 10px;
+  overflow: hidden;
+}
+.info {
+  text-align: left;
+  margin: 10px 0px 5px 0px;
+  font-size: 16px;
+}
+.photo {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+.caption {
+  padding: 10px;
+  background-color: #e3ebc8;
+  border-radius: 0px 0px 8px 8px;
+  font-size: 16px;
+}
+.price {
+  color: rgb(216, 23, 23);
+  font-weight: bold;
+  margin: 5px 0px;
+  font-size: 24px;
+}
+.material {
+}
+.gem {
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 5px 0px;
+  border-radius: 4px;
+  background-color: gray;
+  color: white;
+  font-size: 16px;
+}
+.buy {
+  margin: 5px 0px 0px 0px;
+  border-radius: 4px;
+  background-color: #e95bc3;
+  color: wheat;
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}

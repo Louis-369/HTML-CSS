@@ -3,12 +3,17 @@ a {
   background: #92e9ff;
   line-height: 64px;
 }
+.nav-btn:hover {
+  border-bottom: 2px solid red;
+  border-radius: 100%;
+}
 .navigation-nav {
   background-color: #e8be5e;
   text-align: center;
 }
 
 .bg-img {
+  margin: 10px;
   height: 600px;
   background-image: url("https://www.ghibli.jp/gallery/mononoke021.jpg"),
     url("https://www.ghibli.jp/gallery/mononoke022.jpg"),
@@ -65,4 +70,8 @@ a {
 
 .box:nth-of-type(6n + 4) {
   float: right;
+}
+
+.clear {
+  clear: both;
 }

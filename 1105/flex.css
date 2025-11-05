@@ -1,0 +1,35 @@
+section {
+  margin: 100px;
+}
+.box-warp {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  height: 200px;
+  gap: 20px;
+}
+.box {
+  height: 100px;
+  font-size: 16px;
+}
+
+.box1 {
+  background-color: #edde72;
+}
+.box2 {
+  background-color: #5fc2c9;
+}
+.box3 {
+  background-color: #d895e3;
+}
+
+.container {
+  gap: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.card {
+  height: 200px;
+  background-color: #cab14d;
+  width: 100%;
+}
