@@ -1,0 +1,52 @@
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 90px;
+  display: flex;
+}
+.banner-link {
+  color: #505563;
+  justify-items: right;
+}
+.banner-logo {
+  justify-items: left;
+}
+.banner-opentable {
+  justify-items: right;
+}
+
+.banner-container {
+  justify-content: center;
+  margin: 0px 35px;
+}
+.h2-font {
+  font-size: 44px;
+  font-weight: bold;
+}
+.h2-font15 {
+  font: 15px;
+  font-weight: bold;
+}
+.colorff6337 {
+  color: #ff6337;
+}
+.color505563 {
+  color: #505563;
+}
+.banner-card {
+  display: flex;
+  margin-top: 90px;
+  flex-wrap: wrap;
+}
+.banner-card-word {
+  margin-left: 55px;
+  z-index: 2;
+}
+.banner-card-image {
+  z-index: 1;
+}

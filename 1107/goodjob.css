@@ -1,0 +1,90 @@
+section {
+  padding: 16px 32px;
+  width: 1200px;
+  display: flex;
+  background-color: #c0bebe;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.card-wrap {
+  gap: 20px;
+  display: flex;
+  width: 1152px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff;
+}
+img {
+  width: 60px;
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 12px;
+  border: solid 1px #ddd;
+}
+.card {
+  flex-basis: calc((100% - 60px) / 4);
+  flex-direction: column;
+  flex-shrink: 1;
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  border-radius: 12px;
+  border: solid 1px #ddd;
+  flex-wrap: wrap;
+}
+.col-1 {
+  display: flex;
+  justify-content: left;
+  row-gap: 16px;
+  column-gap: 8px;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.name {
+  display: flex;
+}
+.ads {
+  flex-direction: column;
+  justify-content: left;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 16px;
+}
+.jobchance {
+  margin: 0 auto;
+  color: #ff9101;
+}
+.material-symbols-outlined {
+  vertical-align: text-bottom;
+  color: #a9a9a9;
+}
+.label {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  margin-top: auto;
+}
+.job-title {
+  border-radius: 12px;
+  border: solid 1px #ddd;
+  padding: 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.recommend {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: solid 1px #ddd;
+}
+.recommend-div {
+  display: flex;
+  justify-content: left;
+  margin: 12px 0;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+}

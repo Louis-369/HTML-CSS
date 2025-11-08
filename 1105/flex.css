@@ -3,10 +3,9 @@ section {
 }
 .box-warp {
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
   flex-wrap: wrap;
   height: 200px;
-  gap: 20px;
 }
 .box {
   height: 100px;

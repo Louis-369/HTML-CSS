@@ -1,0 +1,56 @@
+header {
+  background-color: #03374e;
+}
+.banner {
+  padding: 10px 20px;
+  background-color: #03374e;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  max-width: 1024px;
+}
+
+.logo {
+  width: 100px;
+  aspect-ratio: 4/3;
+}
+img {
+  height: 100%;
+  object-fit: cover;
+}
+.mid {
+  height: 100%;
+  background-color: #ffffff;
+  display: inline-block;
+}
+.round {
+  width: 75px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #eef528;
+  text-align: center;
+  aspect-ratio: 1/1;
+  font-size: 36px;
+  font-weight: bold;
+}
+.box {
+  background-color: rgb(95, 184, 172);
+  min-width: 200;
+  max-width: 800;
+}
+.roll {
+  background-color: #7008a0;
+  min-height: 100vh;
+  min-width: 10vw;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.roll-out {
+  display: flex;
+}
+.p-zh {
+  min-width: 90vw;
+}
