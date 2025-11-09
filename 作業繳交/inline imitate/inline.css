@@ -1,28 +1,63 @@
+* {
+  font-family: "Noto Sans Japanese-Normal", sans-serif;
+}
 .banner {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #ffffff;
-  z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 90px;
+  min-height: 90px;
+  align-content: center;
   display: flex;
+  z-index: 1000;
+}
+.banner-container {
+  margin: 0px 35px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.banner-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
 }
 .banner-link {
   color: #505563;
-  justify-items: right;
+  padding: 0 15px;
+  font-size: 15px;
+  flex-wrap: nowrap;
+  display: flex;
+  line-height: 1;
+  align-items: center;
+  white-space: nowrap;
 }
 .banner-logo {
-  justify-items: left;
+  margin-left: 55px;
+  aspect-ratio: 45/17;
+  object-fit: none;
+  flex: 0 0 auto;
 }
 .banner-opentable {
-  justify-items: right;
+  font-size: 18px;
+  background-color: #da3743;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 18.5px 10px 18.5px;
+  border-radius: 30px;
+  white-space: nowrap;
+  display: inline-block;
+  height: auto;
 }
 
-.banner-container {
-  justify-content: center;
-  margin: 0px 35px;
+.banner-opentable-decoration {
+  aspect-ratio: 96/71;
+  display: inline-block;
+  object-fit: contain;
+  height: 1em;
+  margin-right: 10px;
 }
 .h2-font {
   font-size: 44px;
@@ -31,22 +66,49 @@
 .h2-font15 {
   font: 15px;
   font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 1px;
+  font-family: "Noto Sans Japanese-Bold", sans-serif;
 }
 .colorff6337 {
   color: #ff6337;
 }
-.color505563 {
+.banner-card-p {
   color: #505563;
+  margin-bottom: 75px;
+  line-height: 30.4px;
 }
+.try-now {
+  background-color: #064c8c;
+  border-color: #064c8c;
+  border-radius: 7px;
+  padding: 12px 20px 12px 20px;
+
+  color: #ffffff;
+}
+
 .banner-card {
+  margin-top: 100px;
   display: flex;
-  margin-top: 90px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-image: url("https://inline.company/wp-content/uploads/2023/12/New-official-website_v2_%E9%A6%96%E5%9C%96.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  aspect-ratio: 1061/497;
 }
 .banner-card-word {
   margin-left: 55px;
-  z-index: 2;
+  flex-shrink: 0;
 }
-.banner-card-image {
-  z-index: 1;
+.world-map {
+  background-image: url("https://inline.company/wp-content/uploads/2023/12/New-official-website_v2_country.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  aspect-ratio: 750/293;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
