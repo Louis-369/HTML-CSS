@@ -123,4 +123,66 @@
 .world-map-text {
   padding-top: 100px;
   color: #333333;
+  font-size: 17px;
+}
+.bridge {
+  text-align: center;
+}
+.bridge-1 {
+  color: #ec6300;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.bridge-2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Noto Sans Japanese-Bold", sans-serif;
+}
+.card-booking {
+  background-image: url("https://inline.company/wp-content/uploads/2024/07/New-official-website_v2_hp_background1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  color: #252932;
+}
+
+.booking-manage {
+  color: #064c8c;
+  font-size: 24px;
+}
+.card-booking-img {
+  display: inline-block;
+  aspect-ratio: 8/7;
+  width: 600px;
+}
+.card-booking-word {
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+}
+.card-bullet-points {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.card-bullet-points-head {
+  font: 1.2rem Open Sans, Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.card-bullet-points-icon {
+  display: flex;
+  width: 44px;
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.card-bullet-points-word {
+  font-size: 1em;
 }
