@@ -9,66 +9,88 @@
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   min-height: 90px;
-  align-content: center;
   display: flex;
   z-index: 1000;
 }
 .banner-container {
-  margin: 0px 35px;
   display: flex;
-  align-content: center;
   justify-content: space-between;
-}
-.banner-nav {
-  display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
-  align-content: center;
+  width: 100%;
+}
+.banner-out {
+  display: flex;
+  align-items: center;
 }
 .banner-link {
   color: #505563;
-  padding: 0 15px;
-  font-size: 15px;
+  padding: 0 25px;
   flex-wrap: nowrap;
   display: flex;
   line-height: 1;
   align-items: center;
+  height: 100%;
   white-space: nowrap;
 }
+.banner-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
 .banner-logo {
-  margin-left: 55px;
-  aspect-ratio: 45/17;
-  object-fit: none;
+  aspect-ratio: 2/1;
+  object-fit: contain;
   flex: 0 0 auto;
+  margin-left: calc(11vw - 25px);
+  width: 90px;
 }
 .banner-opentable {
   font-size: 18px;
   background-color: #da3743;
   color: #ffffff;
   font-weight: bold;
-  padding: 10px 18.5px 10px 18.5px;
+  padding: 10px 18.5px;
   border-radius: 30px;
   white-space: nowrap;
-  display: inline-block;
+  display: inline-flex;
   height: auto;
+  gap: 10px;
+  align-items: center;
+  margin-right: 11vw;
 }
 
 .banner-opentable-decoration {
-  aspect-ratio: 96/71;
-  display: inline-block;
+  display: block;
   object-fit: contain;
   height: 1em;
-  margin-right: 10px;
+}
+.banner-card {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-image: url("https://inline.company/wp-content/uploads/2023/12/New-official-website_v2_%E9%A6%96%E5%9C%96.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  aspect-ratio: 1061/497;
+}
+.banner-card-word {
+  margin-left: 11vw;
+  flex-shrink: 0;
+  margin-top: -160px;
 }
 .h2-font {
   font-size: 44px;
   font-weight: bold;
 }
 .h2-font15 {
-  font: 15px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 14px;
-  margin-bottom: 1px;
-  font-family: "Noto Sans Japanese-Bold", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 70px;
+  font-family: "arial black", sans-serif;
 }
 .colorff6337 {
   color: #ff6337;
@@ -87,21 +109,6 @@
   color: #ffffff;
 }
 
-.banner-card {
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  background-image: url("https://inline.company/wp-content/uploads/2023/12/New-official-website_v2_%E9%A6%96%E5%9C%96.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  aspect-ratio: 1061/497;
-}
-.banner-card-word {
-  margin-left: 55px;
-  flex-shrink: 0;
-}
 .world-map {
   background-image: url("https://inline.company/wp-content/uploads/2023/12/New-official-website_v2_country.png");
   background-position: center;
@@ -109,6 +116,11 @@
   background-size: contain;
   aspect-ratio: 750/293;
   display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+}
+.world-map-text {
+  padding-top: 100px;
+  color: #333333;
 }
