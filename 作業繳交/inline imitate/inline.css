@@ -1,5 +1,6 @@
 * {
   font-family: "Noto Sans Japanese-Normal", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 .banner {
   position: fixed;
@@ -176,7 +177,7 @@
 .card-bullet-points {
   display: flex;
   flex-wrap: nowrap;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .card-bullet-points-head {
   font: 1.2rem Open Sans, Arial, Helvetica, sans-serif;
@@ -201,7 +202,104 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  aspect-ratio: 1497/ 1785;
   display: flex;
   color: #252932;
   flex-direction: column;
+}
+.card-up,
+.card-down {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  color: #252932;
+  gap: 40px;
+}
+.card-waiting-word {
+  display: flex;
+  width: 600px;
+  flex-direction: column;
+}
+.card-half-img2 {
+  display: inline-block;
+  aspect-ratio: 8/7;
+  width: 600px;
+  margin-top: 172px;
+  padding-bottom: 50px;
+}
+.height-50 {
+  height: 50px;
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+.card-group-customer {
+  margin-top: 0;
+  color: #064c8c;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 66px;
+  margin-left: 71px;
+}
+.card-down {
+  margin-top: 200px;
+}
+.card-half-img3 {
+  display: inline-block;
+  aspect-ratio: 8/7;
+  width: 600px;
+  margin-top: 65px;
+}
+
+/* footer */
+footer a:hover {
+  color: #ff6e06;
+}
+.footer {
+  background-color: #252932;
+  color: #e3e6ed;
+  padding: 60px 0 20px 0;
+}
+.footer-container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-logo {
+  width: 90px;
+  height: 36px;
+  display: block;
+}
+address {
+  margin-top: 25px;
+  line-height: 1.1;
+  font-style: normal;
+}
+.country {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.location {
+  font-size: 12.3px;
+  margin-bottom: 1em;
+}
+.footer-h3 {
+  font: 13px Montserrat, Arial, Helvetica, sans-serif;
+  margin: 0 0 20px 0;
+}
+.sitemap-li ul li,
+.footer-h3 + ul li {
+  display: block;
+  border-bottom: 1px solid #666666;
+  position: relative;
+  padding: 10px 10px 10px 0;
+}
+.footer-h3 ~ p {
+  margin-bottom: 16px;
+}
+.mb40 {
+  margin-bottom: 40px;
 }
