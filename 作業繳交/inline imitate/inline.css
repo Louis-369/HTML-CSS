@@ -1,7 +1,13 @@
+:root {
+  /* 整個html文檔 */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Noto Sans Japanese-Normal", sans-serif;
+}
 * {
   font-family: "Noto Sans Japanese-Normal", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
 .banner {
   position: fixed;
   top: 0;
