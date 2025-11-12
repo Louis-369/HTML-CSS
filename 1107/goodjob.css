@@ -1,27 +1,32 @@
-section {
+/* section {
   padding: 16px 32px;
-  width: 1200px;
+  max-width: 1200px;
   display: flex;
   background-color: #c0bebe;
   flex-direction: column;
   margin: 0 auto;
-}
+} */
 .card-wrap {
   gap: 20px;
   display: flex;
-  width: 1152px;
+  max-width: 1152px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: #ebaf54;
 }
-img {
+.card-img {
   width: 60px;
   aspect-ratio: 1/1;
-  flex-shrink: 0;
-  object-fit: contain;
   border-radius: 12px;
   border: solid 1px #ddd;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .card {
   flex-basis: calc((100% - 60px) / 4);
@@ -46,7 +51,7 @@ img {
 .name {
   display: flex;
 }
-.ads {
+.address {
   flex-direction: column;
   justify-content: left;
   flex-wrap: wrap;
@@ -78,13 +83,134 @@ img {
   padding: 8px 16px;
   border-radius: 12px;
   border: solid 1px #ddd;
+  background-color: #ddd;
+  margin: 1px;
+  flex-shrink: 0;
 }
 .recommend-div {
   display: flex;
   justify-content: left;
   margin: 12px 0;
+  /* overflow-x: auto; 開啟水平捲軸 */
+  /* white-space: nowrap; 防止換行 */
+  /* gap: 10px; 標籤之間間距 */
+  /* padding: 10px;內距讓畫面有空間 */
+  /* scrollbar-width: none; */
 }
 h2 {
   font-size: 20px;
   font-weight: 700;
+}
+
+.ctl {
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  box-shadow: 5px 5px #ff9101;
+}
+
+.list {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #2e2b2b;
+}
+.item {
+  /* 或是.list li 選取 */
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #b6d740;
+  font-size: 20px;
+  text-align: center;
+  line-height: 100px;
+}
+.item13,
+.item12 {
+  position: relative;
+  bottom: 50px;
+  left: 50px;
+  opacity: 0.5;
+}
+
+.jojo {
+  background-color: #5d5656;
+  position: relative;
+  margin: 0 auto;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  opacity: 0.5;
+  bottom: 0;
+  left: 0;
+  background-color: #e22b2b;
+}
+
+.line {
+  border: 1px solid #b6d740;
+  padding: 100px;
+  text-align: center;
+}
+.outer1 {
+  margin: 10px;
+  position: relative;
+}
+.middle1 {
+  position: relative;
+  margin: 0 auto;
+}
+.inner1 {
+  position: absolute;
+}
+.inner2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.inner3 {
+  position: absolute;
+
+  left: 10px;
+  bottom: 10px;
+}
+
+.shopee {
+  width: 300px;
+  margin: 0 auto;
+}
+.shopee div img {
+  aspect-ratio: 4/3;
+}
+.shopee-img {
+  position: relative;
+  object-fit: cover;
+  position: relative;
+}
+.shopee-text {
+  padding: 10px;
+  background-color: #255f7e;
+}
+.label1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f2e017;
+  border-radius: 0px 0px 0px 10px;
+}
+.label2 {
+  position: absolute;
+  background-color: #cb0505;
+  color: #ddd;
+  left: -10px;
+  top: 20px;
+}
+.label3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #22cb60;
+  border-radius: 10px 0px 0px 0px;
 }

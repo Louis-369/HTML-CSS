@@ -20,6 +20,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="inline.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <header>
@@ -338,52 +339,81 @@
           <a href="">海外</a>
         </ul>
       </section>
-      <section>
-        <div>
+      <section class="outer-form-img">
+        <div class="qoute">
           <p>
-            “ inline 是目前世界上最好用的 訂候位控管、帶位工具及顧客管理系統 ”
+            “ inline 是目前世界上最好用的<br />訂候位控管、帶位工具及顧客管理系統
+            ”
           </p>
           <span> – 許禮麟 / 金田餐飲集團總經理</span>
         </div>
-      </section>
-      <section>
-        <div>
-          <!-- 這div給大背景 -->
-          <form action="">
+        <div class="form-container">
+          <form class="fc-form" action="post">
             <div>
-              <span>Hi 餐廳老闆</span>
-              <span>此表單為提供餐廳試用系統，</span>
-              <span>我們無法提供代訂服務</span>
-              <span>消費者訂位、訂餐請 > </span>
-              <a href="">查詢附近餐廳</a>
-              <p></p>
+              <p class="hello-boss">Hi 餐廳老闆</p>
+              <span class="fc-note"
+                >此表單為提供餐廳試用系統，<span class="fc-note-highlight"
+                  >我們無法提供代訂服務</span
+                ></span
+              >
+
+              <span class="fc-guide"
+                >消費者訂位、訂餐請 >
+                <a class="fc-link" href="">查詢附近餐廳</a></span
+              >
+
+              <p class="fc-desc">
+                現在申請可享 14 天免費試用＋專人導入教學<br />
+                快讓 inline app 成為您餐廳的最佳助手！
+              </p>
             </div>
-            <label for="">
+            <label class="fc-label">
               聯絡人姓名（必填）
               <br />
-              <input type="text" />
+              <input
+                class="fc-input"
+                type="text"
+                placeholder="e.g. Mayer"
+                required
+              />
             </label>
 
-            <label for=""
+            <label class="fc-label"
               >手機號碼（必填）
               <br />
-              <input type="tel" />
+              <input
+                class="fc-input"
+                type="tel"
+                placeholder="e.g. 852637XXXX"
+                required
+              />
             </label>
 
-            <label for=""
+            <label class="fc-label"
               >電子信箱（必填）
               <br />
-              <input type="email" />
+              <input
+                class="fc-input"
+                type="email"
+                placeholder="e.g. welcome@inline.app"
+                required
+              />
             </label>
-            <label for="">
+            <label class="fc-label">
               您的餐廳名稱（必填）
               <br />
-              <input type="text" />
+              <input
+                class="fc-input"
+                type="text"
+                placeholder="e.g. Mayer"
+                required
+              />
             </label>
-            <label for="">
-              您餐廳的所在國家（必填）
+            <label class="fc-label"
+              >required 您餐廳的所在國家（必填）
               <br />
-              <select name="" id="" class="">
+              <select name="" id="" class="fc-select">
+                <option value="">-請選擇國家-</option>
                 <option value="AU">澳大利亞</option>
                 <option value="CA">加拿大</option>
                 <option value="HK">香港</option>
@@ -400,26 +430,27 @@
                 <option value="US">美國</option>
                 <option value="VN">越南</option>
               </select>
+              <!-- js有額外select -->
             </label>
-            <label for="">
+            <label class="fc-label">
               您餐廳的所在地址（必填）
               <br />
-              <input type="text" />
+              <input class="fc-input" type="text" required />
             </label>
-            <label for="">
+            <label class="fc-label">
               您的職稱（必填）
               <br />
-              <input type="text" />
+              <input class="fc-input" type="text" required />
             </label>
-            <label for="">
+            <label class="fc-label">
               是否有使用過其他訂候位管理系統？（必填）
               <br />
-              <input type="text" />
+              <input class="fc-input" type="text" required />
             </label>
-            <label for="">
+            <label class="fc-label">
               您對 inline 的哪個功能有興趣？（必填）
               <br />
-              <select name="" id="">
+              <select name="" id="" class="fc-select">
                 <option value="">--None--</option>
                 <option value="Booking/Queuing Management">訂候位管理</option>
                 <option value="Takeout & Delivery">外帶外送服務</option>
@@ -428,10 +459,10 @@
                 </option>
               </select>
             </label>
-            <label for="">
+            <label class="fc-label" required>
               您是從哪裡獲得inline的資訊？（必填）
               <br />
-              <select name="" id="">
+              <select name="" id="" class="fc-select">
                 <option value="">--None--</option>
                 <option value="Google Search">Google 搜尋</option>
                 <option value="Social Media">
@@ -446,35 +477,57 @@
                 <option value="Telephone Sales">inline 專人電洽</option>
               </select>
             </label>
-            <div>reCAPTCHA</div>
-            <button type="submit">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            ></div>
+
+            <button type="submit" class="fc-submit">
               <span>送出</span>
             </button>
-            <span
+            <span class="fc-caution"
               >此表單為提供餐廳試用系統，請勿在此進行餐廳線上訂位，如需訂位請直接聯繫餐廳
             </span>
           </form>
-          <span>inline 還有什麼強大之處？</span>
-          <a href="">點擊了解更多</a>
+        </div>
+        <div class="more-info">
           <div>
-            <span> 直接電話聯繫我們 </span>
-            <span
-              >電話客服時間：<br />
-              星期一 ~ 星期五 10:00 ~ 19:00</span
-            >
-            <a href="">+886 – 2 – 2322 – 3414</a>
+            <p>inline 還有什麼強大之處？</p>
+            <a href="https://inline.app/zh/why-inline">點擊了解更多</a>
           </div>
+        </div>
+
+        <div class="halve-card">
           <div>
-            <span> 立即免費試用 inline </span>
-            <span
-              >免費前兩週試用期，歡迎填寫表單聯絡我們，
-              我們會有專人盡快回覆您！</span
-            >
-            <a href="">立即免費試用</a>
+            <div>
+              <span class="halve-title"> 直接電話聯繫我們 </span>
+              <span class="halve-text"
+                >電話客服時間：<br />
+                星期一 ~ 星期五 10:00 ~ 19:00</span
+              >
+              <as href="tel:0223223414" class="right-tel"
+                >+886 – 2 – 2322 – 3414</as
+              >
+            </div>
+
+            <div>
+              <span class="halve-title"> 立即免費試用 inline </span>
+              <span class="halve-text"
+                >免費前兩週試用期，歡迎填寫表單聯絡我們，
+                我們會有專人盡快回覆您！</span
+              >
+              <a
+                href="https://inline.app/zh/contact"
+                class="free-try"
+                target="_self"
+                >立即免費試用</a
+              >
+            </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="footer">
       <div class="footer-container">
         <section>
@@ -647,6 +700,7 @@
           </div>
         </section>
       </div>
+
       <div class="copy-right">
         <p>
           © 2024 inline All rights reserved.
