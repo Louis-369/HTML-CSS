@@ -254,6 +254,7 @@
 /* footer */
 footer a:hover {
   color: #ff6e06;
+  transition: color 0.3s ease;
 }
 .footer {
   background-color: #252932;
@@ -302,4 +303,14 @@ address {
 }
 .mb40 {
   margin-bottom: 40px;
+}
+.copy-right {
+  background: #191c23;
+  color: #9ea6b7;
+  padding: 15px 0 13px 0;
+}
+.copy-right ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
 }
