@@ -7,7 +7,24 @@
   font-family: "Noto Sans Japanese-Normal", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+[x-cloak] {
+  display: none !important;
+}
 
+/* :hover */
+.banner-out .banner-link:hover,
+.banner-out .banner-link:focus,
+.has-dropdown .dropdown li a:hover,
+.has-dropdown .dropdown li a:focus {
+  color: #ff6e06;
+  transition: color 0.24s ease;
+}
+.right-tel:hover,
+footer a:hover {
+  color: #ff6e06;
+  transition: color 0.24s ease;
+}
+/* :hover */
 .banner {
   position: fixed;
   top: 0;
@@ -29,6 +46,7 @@
 .banner-out {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .banner-link {
   color: #505563;
@@ -72,6 +90,7 @@
   object-fit: contain;
   height: 1em;
 }
+
 .banner-card {
   margin-top: 100px;
   display: flex;
@@ -265,6 +284,11 @@
   color: rgb(37, 41, 50);
   text-align: center;
 }
+.partner-section {
+  width: 1200px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
 .partner-nav {
   margin: 0 20px;
   display: flex;
@@ -281,6 +305,11 @@
   color: rgb(102, 102, 102);
   background-color: white;
   border: 0;
+}
+.partner-sort.active {
+  color: #064c8c;
+  font-weight: 600;
+  border-bottom: 2px solid #ff6e06;
 }
 .partner-logo {
   width: 100%;
@@ -559,11 +588,6 @@
   align-self: center;
 }
 /* footer */
-footer a:hover,
-.right-tel:hover {
-  color: #ff6e06;
-  transition: color 0.3s ease;
-}
 .footer {
   background-color: #252932;
   color: #e3e6ed;
@@ -600,6 +624,16 @@ address {
   font: 13px Montserrat, Arial, Helvetica, sans-serif;
   margin: 0 0 20px 0;
 }
+.zh {
+  color: black;
+  border: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30.4px;
+  text-decoration: none;
+  padding-left: 0;
+  cursor: default;
+}
 .sitemap-li ul li,
 .footer-h3 + ul li {
   display: block;
@@ -612,6 +646,11 @@ address {
 }
 .mb40 {
   margin-bottom: 40px;
+}
+.zack {
+  width: 115px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
 }
 .copy-right {
   justify-content: space-around;
@@ -629,4 +668,24 @@ address {
 }
 .copy-right ul li a i {
   font-size: 25px;
+}
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 28px;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ff6e06; /* 橘色背景 */
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(6, 76, 140, 0.15);
+  z-index: 2000;
+  transition: transform 180ms ease, opacity 180ms ease;
+  opacity: 1;
+  cursor: pointer;
 }

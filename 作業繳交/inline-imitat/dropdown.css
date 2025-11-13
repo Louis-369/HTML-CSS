@@ -1,0 +1,83 @@
+.has-dropdown {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px; /* 可依需求微調間距 */
+}
+
+/* 保持 banner-link 的樣式，但強制不換行 */
+.has-dropdown > .banner-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.dropdown li a:hover,
+.dropdown li a:focus {
+  color: #ff6e06;
+  transition: color 0.24s ease;
+  background: #f7f7f7; /* 可選：保留你原本的項目 hover 背景 */
+}
+
+/* 初始隱藏，位置貼緊父元素（top:100%），用 translateY 做視覺位移 */
+.has-dropdown .dropdown {
+  position: absolute;
+  top: 100%; /* <- 改為 100%，避免和父元素留可點空隙 */
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(10, 20, 40, 0.08);
+  padding: 8px 0;
+  margin: 0;
+  z-index: 1500;
+
+  opacity: 0;
+
+  transform: translateY(33px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  will-change: opacity, transform;
+}
+
+/* 顯示時：translate 回 0 並開啟 pointer-events */
+.has-dropdown:hover > .dropdown,
+.has-dropdown:focus-within > .dropdown,
+.has-dropdown.open > .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 每一項的外觀 */
+.has-dropdown .dropdown li a {
+  display: block;
+  padding: 15px 6px;
+  color: #505563;
+  text-decoration: none;
+  white-space: nowrap;
+  border-color: #f3f4f5;
+  font: 15px Open Sans, Arial, Helvetica, sans-serif;
+}
+
+/* 若 dropdown 內容較寬或畫面空間不足，可靠右對齊（mobile 或特定情況） */
+.has-dropdown.align-right > .dropdown {
+  left: auto;
+  right: 0;
+}
+
+/* small tweak：避免 banner-link 換行導致欄位錯位 */
+.has-dropdown > .banner-link {
+  white-space: nowrap;
+}
+
+/* 若你想要下拉項目有分隔線（選用） */
+.has-dropdown .dropdown li + li a {
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* accessibility: 明確 focus 樣式（鍵盤使用者） */
+.has-dropdown > .banner-link:focus {
+  outline: 2px solid rgba(6, 76, 140, 0.12);
+  outline-offset: 3px;
+  border-radius: 6px;
+}

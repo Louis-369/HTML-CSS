@@ -20,7 +20,18 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="inline.css" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="dropdown.css" />
+    <script
+      src="https://www.google.com/recaptcha/api.js?hl=zh-TW"
+      async
+      defer
+    ></script>
+    <script defer src="partner-tabs.js"></script>
+    <script defer src="back-to-top.js"></script>
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
   </head>
   <body>
     <header>
@@ -34,8 +45,83 @@
             />
           </a>
           <div class="banner-out">
-            <a href="" class="banner-link">合作夥伴</a>
-            <a href="" class="banner-link">主要服務</a>
+            <div class="has-dropdown">
+              <a class="banner-link" aria-haspopup="true" aria-expanded="false"
+                >合作夥伴</a
+              >
+              <ul class="dropdown" role="menu" aria-label="合作夥伴清單">
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="https://inline.app/zh/%e5%85%8d%e8%b2%bb%e9%96%8b%e9%80%9a-google-%e8%a8%82%e4%bd%8d"
+                    >Google訂位</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/opentable-tw"
+                    >OpenTable</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="https://inline.app/zh/mozrest-x-michelin"
+                    >Mozrest x 米其林指南</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="has-dropdown">
+              <a class="banner-link" aria-haspopup="true" aria-expanded="false"
+                >主要服務</a
+              >
+              <ul class="dropdown" role="menu" aria-label="主要服務清單">
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/why-inline"
+                    >inline 特色</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/features"
+                    >訂位管理</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/queuing"
+                    >候位管理</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/onlineorder"
+                    >線上外帶/外送服務</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="https://inline.app/zh/flexible_deposit"
+                    >彈性訂金</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/crm"
+                    >顧客管理 CRM</a
+                  >
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="https://inline.app/zh/kocmarketing"
+                    >微網紅行銷方案</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="https://inline.app/zh/restaurantmarketing"
+                    >餐廳數位行銷方案</a
+                  >
+                </li>
+              </ul>
+            </div>
             <a href="https://inline.app/zh/clients" class="banner-link"
               >客戶推薦</a
             >
@@ -50,14 +136,16 @@
               class="banner-link"
               >消費者常見問題</a
             >
-            <a href="https://lihi1.com/fR0SH" class="banner-opentable">
-              <img
-                src="	https://inline.imgix.net/images/ot-logo-white.png"
-                alt=""
-                class="banner-opentable-decoration"
-              />
-              餐廳隨時訂</a
-            >
+            <div>
+              <a href="https://lihi1.com/fR0SH" class="banner-opentable">
+                <img
+                  src="	https://inline.imgix.net/images/ot-logo-white.png"
+                  alt=""
+                  class="banner-opentable-decoration"
+                />
+                餐廳隨時訂</a
+              >
+            </div>
           </div>
         </div>
       </nav>
@@ -319,200 +407,734 @@
         </div>
       </section>
       <p class="partner">正在使用inline的合作夥伴…</p>
-      <section>
-        <div class="partner-nav">
-          <button class="partner-sort">連鎖餐飲集團</button>
-          <button class="partner-sort">五星級飯店</button>
-          <button class="partner-sort">百貨商場</button>
-          <button class="partner-sort">米其林星級</button>
-          <button class="partner-sort">特色名店</button>
-          <button class="partner-sort">海外</button>
+      <section x-data="partnerTabs()" x-cloak class="partner-section">
+        <div class="partner-nav" role="tablist" aria-label="合作夥伴分類">
+          <button
+            class="partner-sort"
+            role="tab"
+            data-key="restaurant"
+            :class="{ 'active': activeTab === 'restaurant' }"
+            @click="activeTab = 'restaurant'"
+            :aria-selected="activeTab === 'restaurant' ? 'true' : 'false'"
+            :tabindex="activeTab === 'restaurant' ? 0 : -1"
+            @keydown.arrow-right.prevent="focusNext($event)"
+            @keydown.arrow-left.prevent="focusPrev($event)"
+          >
+            連鎖餐飲集團
+          </button>
+
+          <button
+            class="partner-sort"
+            role="tab"
+            data-key="hotel"
+            :class="{ 'active': activeTab === 'hotel' }"
+            @click="activeTab = 'hotel'"
+            :aria-selected="activeTab === 'hotel' ? 'true' : 'false'"
+            :tabindex="activeTab === 'hotel' ? 0 : -1"
+            @keydown.arrow-right.prevent="focusNext($event)"
+            @keydown.arrow-left.prevent="focusPrev($event)"
+          >
+            五星級飯店
+          </button>
+
+          <button
+            class="partner-sort"
+            role="tab"
+            data-key="mall"
+            :class="{ 'active': activeTab === 'mall' }"
+            @click="activeTab = 'mall'"
+            :aria-selected="activeTab === 'mall' ? 'true' : 'false'"
+            :tabindex="activeTab === 'mall' ? 0 : -1"
+            @keydown.arrow-right.prevent="focusNext($event)"
+            @keydown.arrow-left.prevent="focusPrev($event)"
+          >
+            百貨商場
+          </button>
+
+          <button
+            class="partner-sort"
+            role="tab"
+            data-key="michelin"
+            :class="{ 'active': activeTab === 'michelin' }"
+            @click="activeTab = 'michelin'"
+            :aria-selected="activeTab === 'michelin' ? 'true' : 'false'"
+            :tabindex="activeTab === 'michelin' ? 0 : -1"
+            @keydown.arrow-right.prevent="focusNext($event)"
+            @keydown.arrow-left.prevent="focusPrev($event)"
+          >
+            米其林星級
+          </button>
+
+          <button
+            class="partner-sort"
+            role="tab"
+            data-key="well-known"
+            :class="{ 'active': activeTab === 'well-known' }"
+            @click="activeTab = 'well-known'"
+            :aria-selected="activeTab === 'well-known' ? 'true' : 'false'"
+            :tabindex="activeTab === 'well-known' ? 0 : -1"
+            @keydown.arrow-right.prevent="focusNext($event)"
+            @keydown.arrow-left.prevent="focusPrev($event)"
+          >
+            特色名店
+          </button>
+
+          <button
+            class="partner-sort"
+            role="tab"
+            data-key="overseas"
+            :class="{ 'active': activeTab === 'overseas' }"
+            @click="activeTab = 'overseas'"
+            :aria-selected="activeTab === 'overseas' ? 'true' : 'false'"
+            :tabindex="activeTab === 'overseas' ? 0 : -1"
+            @keydown.arrow-right.prevent="focusNext($event)"
+            @keydown.arrow-left.prevent="focusPrev($event)"
+          >
+            海外
+          </button>
+        </div>
+        <!-- 各分類內容區塊（x-if 控制顯示） -->
+        <template x-if="activeTab === 'restaurant'">
           <div class="partner-logo" id="restaurant">
             <div class="logo-box">
               <a
                 href="https://inline.app/booking/-KXKjbMyZzEgAYIwbVnO:inline-live-2ndfloor?language=zh-tw"
                 target="_blank"
-                ><img src="img/restaurant/1.png" alt=""
-              /></a>
+              >
+                <img
+                  src="https://inline.app/wp-content/uploads/2019/07/logo16@2x.png"
+                  alt="貳樓"
+                  loading="lazy"
+                />
+              </a>
             </div>
             <div class="logo-box">
               <a
                 href="https://inline.app/booking/-L31G0d9splHSo6q4jEp?language=zh-tw"
                 target="_blank"
-                ><img src="img/restaurant/2.png" alt=""
-              /></a>
+              >
+                <img
+                  src="https://inline.company/wp-content/uploads/2019/07/%E9%80%99%E4%B8%80%E9%8D%8B-01-1.png"
+                  alt="這一鍋"
+                  loading="lazy"
+                />
+              </a>
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/3.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo07@2x-1.png"
+                alt="金色山脈"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/4.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo04@2x-5.png"
+                alt="馬辣"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/5.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo01@2x-4.png"
+                alt="瓦城"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/6.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo14@2x.png"
+                alt="橘色"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/9.png" alt="" />
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo15@2x-2.png"
+                alt="涮乃葉"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/10.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo03@2x-5.png"
+                alt="乾杯"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/11.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo02@2x-4.png"
+                alt="海底撈"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/12.png" alt="" />
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo10@2x-2.png"
+                alt="鼎王"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/13.png" alt="" />
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo08@2x-3.png"
+                alt="犇和牛館"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/14.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo06@2x-2.png"
+                alt="Fridays"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/15.png" alt="" />
+              <img
+                src="	https://inline.company/wp-content/uploads/2018/06/logo_gbnew@2x.png"
+                alt="GBA"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/16.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/10/logo15-copy@2x.png"
+                alt="饗麻饗辣"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/17.png" alt="" />
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/logo17@2x.png"
+                alt="KuraSushi"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/18.png" alt="" />
+              <img
+                src="	https://inline.company/wp-content/uploads/2018/06/special_logo02@2x.png"
+                alt="添好運"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/19.png" alt="" />
+              <img
+                src="	https://inline.company/wp-content/uploads/2019/07/%E5%A4%A7%E9%BC%8ELOGO-03-01-1.png"
+                alt="厝秘"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/restaurant/20.png" alt="" />
-            </div>
-            <div class="logo-box">
-              <img src="img/restaurant/21.jpg" alt="" />
+              <img
+                src="https://inline.company/wp-content/uploads/2019/07/%E5%A4%A7%E9%BC%8ELOGO-02-01.jpg"
+                alt="易鼎活蝦"
+                loading="lazy"
+              />
             </div>
           </div>
-          <div class="partner-logo" id="hotel" x-show="activeTab === 'hotel'">
-            <div class="logo-box"><img src="img/hotel/1.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/2.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/3.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/4.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/5.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/6.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/7.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/8.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/9.png" alt="" /></div>
-            <div class="logo-box"><img src="img/hotel/10.png" alt="" /></div>
-          </div>
-          <div class="partner-logo" id="mall" x-show="activeTab === 'mall'">
-            <div class="logo-box"><img src="img/mall/1.png" alt="" /></div>
-            <div class="logo-box"><img src="img/mall/2.png" alt="" /></div>
-            <div class="logo-box"><img src="img/mall/3.png" alt="" /></div>
-            <div class="logo-box"><img src="img/mall/4.png" alt="" /></div>
-            <div class="logo-box"><img src="img/mall/5.png" alt="" /></div>
-            <div class="logo-box"><img src="img/mall/6.png" alt="" /></div>
-          </div>
-          <div
-            class="partner-logo"
-            id="michelin"
-            x-show="activeTab === 'michelin'"
-          >
-            <div class="logo-box"><img src="img/michelin/1.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/2.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/3.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/4.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/5.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/6.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/7.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/8.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/9.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/10.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/11.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/12.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/13.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/14.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/15.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/16.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/17.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/18.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/19.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/20.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/21.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/22.png" alt="" /></div>
-            <div class="logo-box"><img src="img/michelin/23.png" alt="" /></div>
-          </div>
-          <div
-            class="partner-logo"
-            id="well-known"
-            x-show="activeTab === 'well-known'"
-          >
+        </template>
+
+        <template x-if="activeTab === 'hotel'">
+          <div class="partner-logo" id="hotel">
             <div class="logo-box">
-              <img src="img/well-known/1.png" alt="" />
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo22@2x.png"
+                alt="Regent"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/2.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo25@2x.png"
+                alt="福華大飯店"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/3.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo26@2x.png"
+                alt="美福大飯店"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/4.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo27@2x.png"
+                alt="華泰王子大飯店"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/5.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo28@2x.png"
+                alt="Westin"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/6.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo29@2x.png"
+                alt="圓山大飯店"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/7.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo30@2x.png"
+                alt="Aeris"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/8.png" alt="" />
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo02@2x.png"
+                alt="S"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/9.png" alt="" />
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo01@2x.png"
+                alt="誠品行旅"
+                loading="lazy"
+              />
             </div>
             <div class="logo-box">
-              <img src="img/well-known/10.png" alt="" />
-            </div>
-            <div class="logo-box">
-              <img src="img/well-known/11.png" alt="" />
-            </div>
-            <div class="logo-box">
-              <img src="img/well-known/12.png" alt="" />
-            </div>
-            <div class="logo-box">
-              <img src="img/well-known/13.jpg" alt="" />
-            </div>
-            <div class="logo-box">
-              <img src="img/well-known/14.png" alt="" />
+              <img
+                src="	https://inline.company/wp-content/uploads/2018/06/%E8%A3%95%E5%85%83-LOGO-01-1.png"
+                alt="裕元花園酒店"
+                loading="lazy"
+              />
             </div>
           </div>
-          <div
-            class="partner-logo"
-            id="overseas"
-            x-show="activeTab === 'overseas'"
-          >
-            <div class="logo-box"><img src="img/overseas/1.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/2.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/3.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/4.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/5.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/6.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/7.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/8.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/9.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/10.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/11.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/12.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/13.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/14.png" alt="" /></div>
-            <div class="logo-box"><img src="img/overseas/15.png" alt="" /></div>
+        </template>
+
+        <template x-if="activeTab === 'mall'">
+          <div class="partner-logo" id="mall">
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo03@2x-1.png"
+                alt="遠東SOGO"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo02@2x-5.png"
+                alt="微風廣場"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo01@2x-1.png"
+                alt="新光三越"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo04@2x-1.png"
+                alt="夢時代"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo05@2x-4.png"
+                alt="統一時代百貨"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo06@2x-3.png"
+                alt="ParkLane"
+                loading="lazy"
+              />
+            </div>
           </div>
-        </div>
+        </template>
+
+        <template x-if="activeTab === 'michelin'">
+          <div class="partner-logo" id="michelin">
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo03@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo06@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo04@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo05@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo02@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo08@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo12@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_09@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_10@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo09@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo17@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_14@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_15@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_16@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo10@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_18@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo15@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_20@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_21@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo_22@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo18@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo20@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2018/06/michelin_logo19@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </template>
+
+        <template x-if="activeTab === 'well-known'">
+          <div class="partner-logo" id="well-known">
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo01@2x-6.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo02@2x-7.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo03@2x-7.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo04@2x-3.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo05@2x-6.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo06@2x-1.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.company/wp-content/uploads/2018/06/michelin_logo21@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo09@2x-3.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo10@2x-3.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.company/wp-content/uploads/2018/06/special_logo01@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo11@2x-1.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.company/wp-content/uploads/2018/06/michelin_logo13@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2019/07/大鼎LOGO_工作區域-1-01.jpg"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.company/wp-content/uploads/2019/07/大安餐廳logo_金底-01-3.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </template>
+
+        <template x-if="activeTab === 'overseas'">
+          <div class="partner-logo" id="overseas">
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo41@2x.png"
+                alt="金滿庭"
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo42@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo43@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo44@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo45@2x-1.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo46@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo47@2x-1.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo48@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo49@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo50@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo51@2x-1.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="https://inline.app/wp-content/uploads/2019/07/logo52@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo53@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo54@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="logo-box">
+              <img
+                src="	https://inline.app/wp-content/uploads/2019/07/logo55@2x.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </template>
       </section>
       <section class="outer-form-img">
         <div class="qoute">
@@ -853,7 +1475,7 @@
                   <a href="https://inline.app"><span>English (US)</span></a>
                 </li>
                 <li>
-                  <a href="https://inline.app/zh"><span>繁體中文</span></a>
+                  <p class="zh">繁體中文</p>
                 </li>
                 <li>
                   <a href="https://inline.app/jp/"><span>日本語</span></a>
@@ -877,9 +1499,11 @@
               >
             </h3>
           </div>
-          <div>
-            <a href=""></a>
-          </div>
+          <img
+            src="https://static01.nyt.com/images/2018/11/01/business/01STATE/merlin_146105670_93a4ad1f-5d4a-4326-928c-fac045f2aaee-master1050.jpg"
+            alt=""
+            class="zack"
+          />
         </section>
       </div>
 
@@ -925,5 +1549,16 @@
         </ul>
       </div>
     </footer>
+    <div>
+      <a
+        href="#"
+        id="backToTop"
+        class="back-to-top"
+        aria-label="回到最上方"
+        style="display: none"
+      >
+        <i class="fa-solid fa-angle-up"></i>
+      </a>
+    </div>
   </body>
 </html>
