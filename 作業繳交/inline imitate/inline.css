@@ -256,6 +256,56 @@
   width: 600px;
   margin-top: 65px;
 }
+/*partner*/
+.partner {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgb(37, 41, 50);
+  text-align: center;
+}
+.partner-nav {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 1px solid rgb(240, 242, 247);
+}
+.partner-sort {
+  padding: 14px 20px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30.4px;
+  color: rgb(102, 102, 102);
+  background-color: white;
+  border: 0;
+}
+.partner-logo {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.logo-box {
+  width: calc(100% / 6);
+  height: 160px;
+  text-align: center;
+}
+.partner-logo img {
+  width: 180px;
+  overflow: hidden;
+  transform-origin: center;
+  transition: 0.35s ease-in-out;
+}
+.partner-logo img:hover {
+  width: 190px;
+  transform: matrix(1.1);
+}
+
+/* /partner  */
 /* form */
 .outer-form-img {
   background-image: url("https://inline.company/wp-content/uploads/2024/07/New-official-website_v2_form_background.png");
@@ -263,7 +313,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   aspect-ratio: 8000/11603;
-  padding-bottom: 40px;
 }
 .qoute {
   text-align: center;
@@ -353,25 +402,25 @@
 }
 .fc-input {
   display: block;
-  width: 480px;
-  height: 28px;
+  width: 580px;
+  height: 48px;
   margin: 8px 0 0 0;
-  padding: 10px 12px;
   box-sizing: border-box;
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid #dddd;
   border-radius: 4px;
   background: #fff;
   font-size: 16px;
   color: rgb(0, 0, 0);
+  padding: 8px 12px;
 }
 .fc-select {
   display: block;
-  width: 508px;
-  height: 50px;
+  width: 580px;
+  height: 48px;
   margin: 8px 0 0 0;
-  padding: 10px 12px;
+  padding: 8px 12px;
   box-sizing: border-box;
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid #dddd;
   border-radius: 4px;
   background: #fff;
   font-size: 16px;
@@ -381,6 +430,10 @@
 .fc-select:hover {
   outline: 0;
   background-color: rgb(250, 250, 250);
+}
+.recaptcha {
+  width: 580px;
+  display: flex;
 }
 .fc-submit {
   display: inline-block;
@@ -408,7 +461,7 @@
 .more-info {
   display: block;
   width: 100%;
-  padding: 80px 0;
+  padding: 58px 0;
   box-sizing: border-box;
   text-align: center;
 }
@@ -441,7 +494,7 @@
 .halve-card {
   display: block;
   width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -458,17 +511,16 @@
 .halve-card div div {
   display: flex;
   flex-direction: column;
-
   width: calc(50% - 20px);
-  margin: 0;
+  margin-bottom: 40px;
   padding: 40px;
-
+  text-align: center;
   box-sizing: border-box;
   background: transparent;
   gap: 16px;
 }
 .border-left {
-  border-left: 1px solid rgb(203, 209, 220);
+  border-left: 1px solid #cbd1dc;
 }
 .halve-title {
   display: block;
@@ -494,8 +546,8 @@
 }
 
 .free-try {
-  display: inline-block;
   margin: 12px 0 0 0;
+  width: 26%;
   padding: 12px 20px;
   border-radius: 10px;
   background: rgb(236, 99, 55);
@@ -504,9 +556,11 @@
   font-size: 13px;
   font-weight: 400;
   cursor: pointer;
+  align-self: center;
 }
 /* footer */
-footer a:hover {
+footer a:hover,
+.right-tel:hover {
   color: #ff6e06;
   transition: color 0.3s ease;
 }
