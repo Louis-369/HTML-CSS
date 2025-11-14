@@ -311,9 +311,7 @@ footer a:hover {
   border: 0;
 }
 .partner-sort.active {
-  color: #064c8c;
   font-weight: 600;
-  border-bottom: 2px solid #ff6e06;
 }
 .partner-logo {
   width: 100%;
