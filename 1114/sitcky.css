@@ -1,0 +1,16 @@
+.header-div {
+  background-color: #902b2b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.aa,
+.bb {
+  position: sticky;
+  background-color: #782dbd;
+  top: 22.78px;
+}
+.bb {
+  background-color: #cac71a;
+}
