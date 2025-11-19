@@ -37,7 +37,7 @@
   color: #ffffff;
   left: -10px;
   top: 20px;
-  z-index: 99;
+  z-index: 2;
   padding: 4px;
 }
 .label1::before {
@@ -49,13 +49,14 @@
   transform: rotate(45deg);
   left: 0.3px;
   bottom: -6.74px;
-  z-index: 99;
+  z-index: 2;
 }
-.label2 {
+.hot::before {
+  content: "HOT";
   position: absolute;
   background-color: #cb0505;
   transform: rotate(45deg);
-  z-index: 99;
+  z-index: 2;
   right: -25px;
   top: 10px;
   color: #ffffff;
