@@ -1,0 +1,12 @@
+section {
+  margin: 0 auto;
+}
+.hot-topics {
+  display: grid;
+}
+.japan-tour {
+  display: grid;
+}
+.twmust-dos {
+  display: grid;
+}
