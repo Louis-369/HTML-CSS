@@ -1,12 +1,239 @@
 section {
   margin: 0 auto;
+  max-width: 1100px;
+  min-height: 412px;
+}
+
+.hot-topics-title::before {
+  border-width: 36px 36px 0 0;
+  border-color: #fab617 transparent transparent;
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  border-style: solid;
+  z-index: -1;
 }
 .hot-topics {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+  grid-template-rows: auto 105px 90px 105px;
+  gap: 15px;
+  margin-top: 100px;
+}
+h2 {
+  position: relative;
+  max-width: 260px;
+  width: 100%;
+  color: #222;
+  font-size: 30px;
+  font-weight: 700;
+}
+.pose-rel {
+  position: relative;
+}
+
+.pose-rel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 0) 45%,
+    rgba(34, 34, 34, 0.6) 90%
+  );
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.hot-topics-h3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Gudea, Heiti, 微軟正黑體, "Microsoft JhengHei";
+  color: #fff;
+  font-weight: 700;
+  z-index: 2;
+  pointer-events: none;
+}
+.big-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.hot-L {
+  grid-area: 2/1/5/2;
+}
+.hot-M1 {
+  grid-area: 2/2/4/3;
+}
+.hot-S1 {
+  grid-area: 4/2/5/3;
+}
+.hot-S2 {
+  grid-area: 2/3/3/4;
+}
+.hot-M2 {
+  grid-area: 3/3/5/4;
+}
+.hot-side {
+  grid-area: 2/4/5/5;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-between;
+}
+.hot-side-a a {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  color: #222;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  font-size: 14px;
+  justify-content: space-between;
+  background-color: #fafafa;
+}
+.hot-side-a a:hover {
+  color: #0c9251;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+  transition: all 0.4s;
+}
+
+.small-img {
+  aspect-ratio: 11/7;
+  width: 110px;
+  height: 100%;
+  overflow: hidden;
+}
+.small-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 12px 12px 0;
+}
+.small-img + div {
+  padding: 10px;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  font-family: Gudea, Heiti, 微軟正黑體, "Microsoft JhengHei";
 }
 .japan-tour {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  margin-top: 80px;
+  height: 477px;
+  max-width: 477;
+}
+
+.japan-tour-title::before {
+  border-width: 18px 18px 0 0;
+  border-color: #11d073 transparent transparent;
+  content: "";
+  position: absolute;
+  left: -10px;
+  z-index: -1;
+  top: 0;
+  border-style: solid;
+}
+.japan-tour-header {
+  display: flex;
+  justify-content: space-between;
+}
+.japan-tour-nav {
+  grid-area: 1/2/2/5;
+  display: flex;
+  flex-wrap: nowrap;
+  text-wrap: nowrap;
+  gap: 32px;
+  justify-content: left;
+}
+.japan-tour-nav button {
+  color: #222;
+  font-size: 18px;
+}
+.japan-tour-nav button:hover {
+  color: #0c9251;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.japan-tour-nav button.active {
+  color: #0c9251;
+  font-weight: 700;
+  border-bottom: 3px solid #0c9251;
+}
+.japan-L {
+  grid-area: 2/1/4/3;
+}
+.japan-M1 {
+  grid-area: 2/3/2/4;
+}
+.japan-M2 {
+  grid-area: 2/4/2/5;
+}
+.japan-M3 {
+  grid-area: 3/3/4/4;
+}
+.japan-M4 {
+  grid-area: 3/4/4/5;
+}
+
+.japan-tour-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 2;
+  pointer-events: none;
+  font-family: Gudea, Heiti, 微軟正黑體, Microsoft JhengHei;
+  color: #fff;
+}
+.japan-tour-h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.japan-tour-info > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.price {
+  font-size: 14px;
+  min-width: 85px;
+}
+.price-NTD {
+  color: #fab617;
+  margin-right: 5px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
 }
 .twmust-dos {
+  margin-top: 80px;
   display: grid;
+  grid-template-columns: minmax(auto, 260px) minmax(auto, 820px);
+  grid-template-areas:
+    "header header"
+    "aside content"
+    "more more";
 }
