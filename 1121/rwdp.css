@@ -1,0 +1,53 @@
+/*  手機 */
+.wrap {
+  margin: 0 auto;
+  width: 90%;
+}
+.hot-card {
+  height: 180px;
+  background-color: #cbcb39;
+}
+.hot-card:nth-of-type(n + 2) {
+  display: none;
+}
+.sale {
+  margin-top: 20px;
+}
+.sale-card {
+  height: 340px;
+  background-color: #44b4b1;
+}
+.sale-card + .sale-card {
+  margin-top: 20px;
+}
+
+/* 平板 */
+@media (max-width: 768px) {
+  .wrap {
+    max-width: 780px;
+  }
+  .hot-card:nth-of-type(2) {
+    display: block;
+  }
+  .hot {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sale {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sale-card + .sale-card {
+    margin-top: 0px;
+  }
+}
+/* 電腦  */
+@media (min-width: 1024px) {
+  .hot-card:nth-of-type(3) {
+    display: block;
+  }
+  .wrap {
+    max-width: 1200px;
+  }
+}

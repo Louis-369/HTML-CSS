@@ -1,0 +1,42 @@
+.container {
+  width: 80%;
+  margin: 100px top;
+  background-color: #c4c0c0;
+  font-size: 0;
+  max-width: 600px;
+}
+.box {
+  height: 200px;
+  width: calc(50% - 10px);
+  font-size: 30px;
+  display: inline-block;
+}
+.box1 {
+  background-color: #d55b5b;
+  margin-right: 20px;
+}
+.box2 {
+  background-color: #7ac547;
+}
+.banner img {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 4/1;
+  object-fit: cover;
+}
+.card {
+  background-color: #28d98c;
+  height: 500px;
+  width: 300px;
+}
+@media (min-width: 768px) {
+  .card {
+    background-color: #e66fce;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    background-color: #30d8cd;
+  }
+}

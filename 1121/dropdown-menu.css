@@ -1,0 +1,81 @@
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #124063;
+}
+
+.lego,
+.img-div {
+  aspect-ratio: 1/1;
+  height: 100%;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+.nav-item {
+  color: #fff;
+  line-height: 80px;
+  background-color: #075088;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.nav-item:hover .second-menu {
+  display: block;
+}
+.second-menu {
+  display: none;
+  position: absolute;
+  background-color: #062b48;
+  left: 10px;
+  top: calc(100% + 10px);
+}
+.second-menu::before {
+  content: "";
+  position: absolute;
+  border-bottom: 10px solid #062b48;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -10px;
+}
+.second-menu::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  left: -10px;
+  top: -10px;
+}
+.second-item {
+  padding: 10px 30px;
+  line-height: 1.5;
+  text-wrap: nowrap;
+  position: relative;
+}
+.second-item:hover,
+.third-item:hover {
+  background-color: #021828;
+}
+.second-item:hover .third-menu {
+  display: block;
+}
+.third-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% - 20px);
+  left: 100%;
+  background-color: #56a2dc;
+}
+.third-item {
+  padding: 10px 30px;
+  line-height: 1.5;
+  text-wrap: nowrap;
+}
