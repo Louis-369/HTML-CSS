@@ -1,0 +1,97 @@
+.side-promo-slider {
+  position: relative;
+  width: 100%;
+  height: 188px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 15px;
+  background-color: #eee;
+}
+.slider-track {
+  display: flex; /* 讓圖片橫向排列 */
+  width: 100%;
+  height: 100%;
+  /* 這裡設定動畫時間 0.3秒，你可以改成 0ms 就像你問的那樣(瞬間切換)，但通常 0.3s 比較好看 */
+  transition: transform 0.3s ease-out;
+}
+.slider-img-item {
+  min-width: 100%; /* 每一張圖都要佔滿整個寬度 */
+  height: 100%;
+  display: block;
+  flex-shrink: 0; /* 防止圖片被擠壓 */
+  width: 100%; /* 寬度必須佔滿視窗的 100% */
+}
+.slider-img-item img {
+  /* ▼▼▼ 關鍵 2：強制圖片拉滿寬高，不准用原圖尺寸 ▼▼▼ */
+  width: 100%;
+  height: 100%;
+  /* ▼▼▼ 關鍵 3：填滿並裁切 (沒有上面那兩行，這行沒用) ▼▼▼ */
+  object-fit: cover;
+  display: block; /* 消除圖片底部白邊 */
+}
+.slider-btn:hover {
+  background-color: #fff;
+  color: #0c9251; /* 綠色 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.slider-btn {
+  position: absolute;
+  top: 45%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.3); /* 稍微白一點 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* 修改這裡：提高層級，並讓它預設就顯示 */
+  z-index: 20;
+  opacity: 1; /* 改成 1，讓它永遠顯示 */
+  color: #444; /* 箭頭顏色：深灰 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 加一點陰影比較立體 */
+  transition: all 0.3s;
+}
+/* 設定上一張在左邊 */
+.slider-btn.prev {
+  left: 10px;
+}
+
+/* 設定下一張在右邊 */
+.slider-btn.next {
+  right: 10px;
+}
+.slider-btn:hover {
+  color: #0c9251; /* 綠色箭頭 */
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.slider-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+}
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.slider-dot:hover {
+  background-color: #0c9251;
+  transform: scale(1.2);
+}
+.slider-dot.active {
+  background-color: #0c9251;
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* 加一點陰影讓綠點更清楚 */
+}

@@ -137,7 +137,7 @@ const tourDatabase = {
       link: "https://vacation.eztravel.com.tw/pkgfrn/keywords?q=%E9%8A%80%E5%B1%B1%E6%BA%AB%E6%B3%89&avbl=1&type=4&cst=70&departure=TPE&tourTypes=PKG&rankBy=2",
     },
     {
-      title: "ˇ東北名湯雙溫泉 4天",
+      title: "東北名湯雙溫泉 4天",
       desc: "復古溫泉夢時光",
       price: "22,900",
       img: "https://image.cdn-eztravel.com.tw/iKXASEeJiaKstDzpzJYsXbfXBbmtSC-dSdaa7f15L7c/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvaG90c3ByaW5nXzIzOTQ5NTEzMzkuanBn.jpg",
@@ -429,3 +429,108 @@ document.addEventListener("alpine:init", () => {
     },
   }));
 });
+
+const taiwanDatabase = {
+  // 1. 旅遊主打星
+  stars: {
+    // 左邊的大圖
+    large: {
+      img: "https://via.placeholder.com/600x400?text=Large+Image", // 填入大圖網址
+      link: "https://www.eztravel.com.tw/...", // 填入大圖連結
+      alt: "旅遊主打星大圖",
+    },
+    // 右邊的四個小圖 (陣列順序 0~3 對應 M1~M4)
+    small: [
+      {
+        title: "小圖標題1",
+        price: "1,200",
+        img: "https://via.placeholder.com/300x200?text=Small+1",
+        link: "#",
+      },
+      {
+        title: "小圖標題2",
+        price: "3,500",
+        img: "https://via.placeholder.com/300x200?text=Small+2",
+        link: "#",
+      },
+      {
+        title: "小圖標題3",
+        price: "2,800",
+        img: "https://via.placeholder.com/300x200?text=Small+3",
+        link: "#",
+      },
+      {
+        title: "小圖標題4",
+        price: "5,000",
+        img: "https://via.placeholder.com/300x200?text=Small+4",
+        link: "#",
+      },
+    ],
+  },
+
+  // 2. 環島遊
+  island: {
+    large: { img: "", link: "", alt: "環島遊大圖" },
+    small: [
+      { title: "環島行程A", price: "9,900", img: "", link: "" },
+      { title: "環島行程B", price: "8,800", img: "", link: "" },
+      { title: "環島行程C", price: "7,700", img: "", link: "" },
+      { title: "環島行程D", price: "6,600", img: "", link: "" },
+    ],
+  },
+
+  // 3. 東台灣
+  east: {
+    large: { img: "", link: "", alt: "" },
+    small: [
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+    ],
+  },
+
+  // 4. 西台灣
+  west: {
+    large: { img: "", link: "", alt: "" },
+    small: [
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+    ],
+  },
+
+  // 5. 澎湖金馬
+  islands: {
+    large: { img: "", link: "", alt: "" },
+    small: [
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+    ],
+  },
+
+  // 6. 台中出發
+  taichung: {
+    large: { img: "", link: "", alt: "" },
+    small: [
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+    ],
+  },
+
+  // 7. 高雄出發
+  kaohsiung: {
+    large: { img: "", link: "", alt: "" },
+    small: [
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+      { title: "", price: "", img: "", link: "" },
+    ],
+  },
+};

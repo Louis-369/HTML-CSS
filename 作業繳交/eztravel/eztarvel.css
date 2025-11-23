@@ -1,3 +1,6 @@
+body {
+  font-family: Gudea, Heiti, 微軟正黑體, "Microsoft JhengHei";
+}
 section {
   margin: 0 auto;
   max-width: 1100px;
@@ -55,7 +58,6 @@ h2 {
   bottom: 0;
   padding: 10px;
   font-size: 18px;
-  font-family: Gudea, Heiti, 微軟正黑體, "Microsoft JhengHei";
   color: #fff;
   font-weight: 700;
   z-index: 2;
@@ -123,7 +125,6 @@ h2 {
   padding: 10px;
   text-overflow: ellipsis;
   font-weight: 700;
-  font-family: Gudea, Heiti, 微軟正黑體, "Microsoft JhengHei";
 }
 .japan-tour {
   display: grid;
@@ -135,7 +136,8 @@ h2 {
   max-width: 477;
 }
 
-.japan-tour-title::before {
+.japan-tour-title::before,
+.twmust-dos-title::before {
   border-width: 18px 18px 0 0;
   border-color: #11d073 transparent transparent;
   content: "";
@@ -151,6 +153,9 @@ h2 {
 }
 .japan-tour-nav {
   grid-area: 1/2/2/5;
+}
+.japan-tour-nav,
+.twmust-dos-nav {
   display: flex;
   flex-wrap: nowrap;
   text-wrap: nowrap;
@@ -161,12 +166,16 @@ h2 {
   color: #222;
   font-size: 18px;
 }
-.japan-tour-nav button:hover {
+.japan-tour-nav button:hover,
+.twmust-dos-nav button:hover,
+.twmust-dos-tag:hover,
+.twmustM:hover {
   color: #0c9251;
   transition: all 0.4s;
   cursor: pointer;
 }
-.japan-tour-nav button.active {
+.japan-tour-nav button.active,
+.twmust-dos-nav button.active {
   color: #0c9251;
   font-weight: 700;
   border-bottom: 3px solid #0c9251;
@@ -230,10 +239,135 @@ h2 {
 }
 .twmust-dos {
   margin-top: 80px;
+  margin-bottom: 80px;
   display: grid;
   grid-template-columns: minmax(auto, 260px) minmax(auto, 820px);
+  grid-template-rows:
+    minmax(auto, 42px) minmax(auto, 395px)
+    minmax(auto, 22px);
+  height: 499px;
+  max-height: 499;
   grid-template-areas:
-    "header header"
+    "header header-nav"
     "aside content"
     "more more";
+  gap: 20px;
+}
+
+.twmust-dos-title {
+  grid-area: header;
+}
+.twmust-dos-nav {
+  grid-area: header-nav;
+}
+.twmust-dos-aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.twmust-aside-h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+.twmust-aside-h4 + ul {
+  display: flex;
+  text-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.twmust-dos-tag {
+  font-size: 14px;
+  color: #222;
+  margin: 0px 20px 10px 0px;
+}
+
+.twmust-dos-card {
+  grid-area: content;
+  display: grid;
+  grid-template-columns:
+    minmax(auto, 260px) minmax(auto, 260px)
+    minmax(auto, 260px);
+
+  grid-template-areas:
+    "twmustL twmustM1 twmustM2"
+    "twmustL twmustM3 twmustM4";
+  gap: 20px;
+}
+
+.twmustL {
+  grid-area: twmustL;
+}
+.twmustM1 {
+  grid-area: twmustM1;
+}
+.twmustM2 {
+  grid-area: twmustM2;
+}
+.twmustM3 {
+  grid-area: twmustM3;
+}
+.twmustM4 {
+  grid-area: twmustM4;
+}
+
+.twmust-dos-more {
+  grid-area: more;
+  text-align: right;
+}
+
+.icon-arrow {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: #11d073;
+  transition: all 0.4s;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  vertical-align: -6px;
+}
+
+.twmust-dos-more > a:hover .icon-arrow {
+  background-color: #0c9251;
+}
+.twmustL {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.twmustM {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s;
+  position: relative;
+}
+.twmustM-p {
+  background-color: #fafafa;
+  min-height: 66px;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.twmustM-h3 {
+  font-size: 14px;
+}
+.twmustM-h3 + .price {
+  text-align: right;
+}
+.price {
+  color: #222;
+}
+.twmustL:hover,
+.twmustM:hover {
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
 }

@@ -6,7 +6,9 @@
     <title>EzTarvel</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="eztarvel.css" />
+    <link rel="stylesheet" href="side-promo-slider.css" />
     <script src="tourData.js" defer></script>
+    <script src="side-promo-slider.js" defer></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -108,6 +110,7 @@
         </div>
       </div>
     </section>
+
     <section class="japan-tour" x-data="japanTourApp">
       <h2 class="japan-tour-title">日本跟團</h2>
       <!-- 導覽列按鈕 -->
@@ -141,7 +144,195 @@
       </template>
     </section>
     <section class="twmust-dos">
-      <h2>寶島必玩</h2>
+      <h2 class="twmust-dos-title">寶島必玩</h2>
+      <div class="twmust-dos-nav">
+        <button>旅遊主打星</button>
+        <button>環島遊</button>
+        <button>東台灣</button>
+        <button>西台灣</button>
+        <button>澎湖金馬</button>
+        <button>台中出發</button>
+        <button>高雄出發</button>
+      </div>
+      <aside class="twmust-dos-aside">
+        <div>
+          <h4 class="twmust-aside-h4">大家都在找</h4>
+          <ul>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://www.eztravel.com.tw/activity/formosa/express/touristtrain/?p=touristtrain1"
+                >環島之星</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/activity/penghutw/"
+                title="澎湖跳島"
+                >澎湖跳島</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://www.eztravel.com.tw/activity/hotspring/?p=hotspring2"
+                >秋冬暖心湯旅</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/domestic/introduction/ODT0000010410"
+                >台中海洋館</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/activity/west-taiwan/"
+                >楓動全台</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/activity/self-driving/"
+                >租車自駕遊</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/tw-airline-packages/"
+                >國內飛機旅遊</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/activity/minithreelinks/"
+                >小三通</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://www.eztravel.com.tw/activity/thsr/vacation/"
+                >高鐵假期</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://trip.eztravel.com.tw/tw-bus-tour/"
+                >巴士旅遊</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://www.eztravel.com.tw/taichung/"
+                >台中出發</a
+              >
+            </li>
+            <li>
+              <a
+                class="twmust-dos-tag"
+                href="https://www.eztravel.com.tw/kaohsiung/taiwan/"
+                >高雄出發</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="side-promo-slider">
+          <div id="tw-track" class="slider-track"></div>
+          <div id="tw-prev" class="slider-btn prev">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+            </svg>
+          </div>
+
+          <div id="tw-next" class="slider-btn next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M8.59 7.41L10 6l6 6-6 6-1.41-1.41L13.17 12z"></path>
+            </svg>
+          </div>
+
+          <div id="tw-pagination" class="slider-pagination"></div>
+        </div>
+      </aside>
+      <div class="twmust-dos-card">
+        <div class="twmustL">
+          <a :href="">
+            <img :src="" :alt="" class="big-card-img" />
+          </a>
+        </div>
+        <div class="twmustM twmustM1">
+          <a href="">
+            <div class=""><img src="" alt="" /></div>
+            <div class="twmustM-p">
+              <h3 class="description twmustM-h3"></h3>
+              <p class="price"><span class="price-NTD"></span>起</p>
+            </div>
+          </a>
+        </div>
+        <div class="twmustM twmustM2">
+          <a href="">
+            <div class=""><img src="" alt="" /></div>
+            <div class="twmustM-p">
+              <h3 class="description twmustM-h3"></h3>
+              <p class="price"><span class="price-NTD"></span>起</p>
+            </div>
+          </a>
+        </div>
+        <div class="twmustM twmustM3">
+          <a href="">
+            <div class=""><img src="" alt="" /></div>
+            <div class="twmustM-p">
+              <h3 class="description twmustM-h3"></h3>
+              <p class="price"><span class="price-NTD"></span>起</p>
+            </div>
+          </a>
+        </div>
+        <div class="twmustM twmustM4">
+          <a href="">
+            <div class=""><img src="" alt="" /></div>
+            <div class="twmustM-p">
+              <h3 class="description twmustM-h3"></h3>
+              <p class="price"><span class="price-NTD"></span>起</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="twmust-dos-more">
+        <a href="//trip.eztravel.com.tw/"
+          >更多主打星<i class="icon-arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="currentColor"
+            >
+              <path d="M8.59 7.41L10 6l6 6-6 6-1.41-1.41L13.17 12z"></path>
+            </svg> </i
+        ></a>
+      </div>
     </section>
   </body>
 </html>
+twmust-dos-nav裡面按鈕tab
+然後twmustL的a連結及img還有twmustM1～twmustM4的a連結及img h3及span價格
