@@ -381,13 +381,289 @@ const tourDatabase = {
   ],
 };
 
-// --- Alpine.js 邏輯設定 ---
-document.addEventListener("alpine:init", () => {
-  Alpine.data("japanTourApp", () => ({
-    // 1. 當前選中的頁籤 (預設顯示 'recommend')
-    activeTab: "recommend",
+// ==========================================
+const taiwanDatabase = {
+  // 旅遊主打星
+  stars: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/D237ki0heUDXtxSR_sbd8O5msKM-N16QVL-MzE3SBb0/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9zYW5yaW8yLmpwZw.jpg",
+      link: "https://www.eztravel.com.tw/activity/formosa/express/touristtrain/?p=touristtrain4",
+      alt: "",
+    },
+    small: [
+      {
+        title: "健行.體驗.度假",
+        price: "1,599",
+        img: "https://image.cdn-eztravel.com.tw/xFu0lyq-Pf8IHDgtY6rQt9ZJWh0g3XvAAYYUCVHJaQs/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNjI3LmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/subsidy/",
+        overlayText: "",
+      },
+      {
+        title: "阿里山林鐵全線通車",
+        price: "6,750",
+        img: "https://image.cdn-eztravel.com.tw/UwIV9-9NFLj9xFSa76wk6ILEeR04KucHlpl8eISSYgE/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lMzgyLmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/alishanrailway/",
+        overlayText: "",
+      },
+      {
+        title: "搭高鐵泡好湯．苗栗湯悅2日遊",
+        price: "2,950",
+        img: "https://image.cdn-eztravel.com.tw/blZGT3s43vd5M81J28DqVuwNAC6lUrb39IwzQw8ynqw/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly9pbWcxLmNkbi1lenRyYXZlbC5jb20udHcvaW1hZ2VzLzFtYzRjMTIwMDBhcTl6dDRwRDE4NV9DXzc5MF80NDRfUjVfUTcwLmpwZw.jpg",
+        link: "https://www.eztravel.com.tw/activity/thsr/vacation/?p=vacation1#subTag1",
+        overlayText: "",
+      },
+      {
+        title: "楓動全台",
+        price: "6,500",
+        img: "https://image.cdn-eztravel.com.tw/Q4xzXpudckeMHfGO1uzwuxncv__8KJb9mzwF_WF31Eg/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNDg1LmpwZw.jpg",
+        link: "https://www.eztravel.com.tw/activity/maple/?p=maple5",
+        overlayText: "",
+      },
+    ],
+  },
 
-    // 2. 定義按鈕選單
+  // 環島遊
+  island: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/XI9ONNx2EljIHDuvvZcOWDlsZPL2S5nwksQGxoyf5cs/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC8yMDI2eWVhcjIuanBn.jpg",
+      link: "https://trip.eztravel.com.tw/activity/surroundisland/?p=surroundisland7",
+      alt: "春節旺馬奔騰折扣中",
+    },
+    small: [
+      {
+        title: "茂林紫斑蝶限定+南迴部落體驗3天",
+        price: "14,500",
+        img: "https://image.cdn-eztravel.com.tw/i7JTjLn6eUwTfckDUZQcqabnSQ2tpZe2KTTITdVzmnU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9LSEgwMDIwMC5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/domestic/introduction/GRT0000016716",
+        overlayText: "",
+      },
+      {
+        title: "買環星送住宿",
+        price: "6,500",
+        img: "https://image.cdn-eztravel.com.tw/C-05uBjYZnmJEpdwbaOMAucukrIwl2mrAwzZ5kkKRVE/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9QSUYwMDQ1My5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/domestic/introduction/GRT0000017349",
+        overlayText: "墾丁H會館海景房+知本美人湯3天",
+      },
+      {
+        title: "一起玩更好玩!",
+        price: "12,500",
+        img: "https://image.cdn-eztravel.com.tw/0kYk_2f1h4KReQys8Zhl7uZ-nGAa0LSD3LdEIvir9JQ/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9DWUkwMDYwOS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/surroundisland/?p=surroundisland2",
+        overlayText: "第4人省3000",
+      },
+      {
+        title: "熱銷推薦",
+        price: "",
+        img: "https://image.cdn-eztravel.com.tw/fuD-VwWxJO-VDxupg20IFarpSBnUaVW6l_bBiLxyBpc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9IVU4wMDI3MS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/surroundisland/?p=surroundisland1",
+        overlayText: "精選優惠",
+      },
+    ],
+  },
+
+  // 東台灣
+  east: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/AaRqlQTkgm0wePpQpPQkJhfIAXmborWvFG2Z6EJDdsc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNjY3LmpwZw.jpg",
+      link: "https://trip.eztravel.com.tw/activity/travel-allowance/",
+      alt: "✈️飛向花蓮現省2000",
+    },
+    small: [
+      {
+        title: "【獨家首賣】天成逸旅-蝴蝶谷2天",
+        price: "5,500",
+        img: "https://image.cdn-eztravel.com.tw/0mh353xo8QnYl40ZKxvLnupSBAY_nF-0MgIUr1bDHLI/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9IVU4wMDEwNS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/domestic/introduction/GRT0000012171",
+        overlayText: "限定造型刺繡貼",
+      },
+      {
+        title: "馬上🧧優惠1500",
+        price: "7,200",
+        img: "https://image.cdn-eztravel.com.tw/xux3LtVZ8CkQuDVMTAqGIEVp36K780KeTuEW4QJsO5k/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9DTllwZXhlbHMtMDIuanBn.jpg",
+        link: "https://trip.eztravel.com.tw/activity/east-taiwan/?p=east-taiwan7",
+        overlayText: "2026花東春節精選",
+      },
+      {
+        title: "一段火車一段飛機",
+        price: "3,499",
+        img: "https://image.cdn-eztravel.com.tw/8HbNpXhZGf6AFdwvolAHCZwn5VJGSrsRWw7DBt_IWSc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9UVFQwMDc5NS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/formosa/mandarin/",
+        overlayText: "台東看海望山",
+      },
+      {
+        title: "雲遊台灣慢旅",
+        price: "15,500",
+        img: "https://image.cdn-eztravel.com.tw/HhaSOPjIZaIktAsx1G7bUKnlaGD8Hxu7K_HoApV3jxI/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNzIzLmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/ezwithldc/",
+        overlayText: "",
+      },
+    ],
+  },
+
+  // 西台灣
+  west: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/SEQc3XvNbbuAnYfvduubISdZRtpPL5xysFKgn8iFiFk/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNjA2LmpwZw.jpg",
+      link: "https://trip.eztravel.com.tw/activity/INDIGO/",
+      alt: "阿里山英迪格",
+    },
+    small: [
+      {
+        title: "日月潭溫德姆酒店2天️",
+        price: "5,990",
+        img: "https://image.cdn-eztravel.com.tw/yAK3acJwu6zeDnsuVTYXUpe_ATqM1GhdfMa4F_XTDHU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNTkzLmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/wyndham/",
+        overlayText: "",
+      },
+      {
+        title: "全球海龜密度最高島嶼️",
+        price: "5,990",
+        img: "https://image.cdn-eztravel.com.tw/CHBkUs8u6XLDn0vsOTzxjHc23yyNRjNW0SHU10D7Ypc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lMjY1LmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/xiaoliuqiu/",
+        overlayText: "",
+      },
+      {
+        title: "春節旺馬奔騰折扣中",
+        price: "1,990",
+        img: "https://image.cdn-eztravel.com.tw/zRezHRYQtzg5ozu58CEiKICBwrAo2is60yJRz1-znxM/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC8yMDI2eWVhckgxLTMuanBn.jpg",
+        link: "https://trip.eztravel.com.tw/activity/west-taiwan/",
+        overlayText: "",
+      },
+      {
+        title: "台灣魅力‧驚喜無限中區觀光圈",
+        price: "2,990",
+        img: "https://image.cdn-eztravel.com.tw/wwma-Ne1T1eIuH-Fz3qxnHZdlC5Nd2AwDey-LUj1l-4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNjYwLmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/middle-sightseeingarea/",
+        overlayText: "",
+      },
+    ],
+  },
+
+  // 澎湖金馬
+  islands: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/hRVkugrDoaQlQ-Buv8fIElxQHA8ttPRr-vpW3q1rNiU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9NWkcwMTA5OS5qcGc.jpg",
+      link: "https://trip.eztravel.com.tw/activity/ezholiday/",
+      alt: "★離島機+酒",
+    },
+    small: [
+      {
+        title: "【澎湖秋瘋季】",
+        price: "2,999",
+        img: "https://image.cdn-eztravel.com.tw/5FDflq8wfdGXkImiS6zF2iLVPthh3ejU4Izxgn6gh4U/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9NWkcwMTE2M183Njh4NDAwLmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/penghutw/",
+        overlayText: "領消費卷500",
+      },
+      {
+        title: "【跳島玩馬祖】",
+        price: "4,999",
+        img: "https://image.cdn-eztravel.com.tw/aXiKVvycH26W8-TgzFeHVMDDo8m-CvZAaDDtYV2mhn4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9NRkswMDIzMy5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/matsu/",
+        overlayText: "",
+      },
+      {
+        title: "【玩樂金門】自由行/團體行玩透透",
+        price: "3,999",
+        img: "https://image.cdn-eztravel.com.tw/4JoOZ-vLmWWbNefz9a8rexWsO50hrIX9medfW_07p6k/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9LTkgwMDUyMS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/kinmen/",
+        overlayText: "",
+      },
+      {
+        title: "【金廈五暢通】金廈小三通計劃旅行票",
+        price: "3,599",
+        img: "https://image.cdn-eztravel.com.tw/8yDaYOaeRmdsuE0hkRBjVlTi2CDozDZg_N2oIGLcJ2k/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9YTU4wMDAxOS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/minithreelinks/",
+        overlayText: "機票+接駁+船票",
+      },
+    ],
+  },
+
+  // 台中出發
+  taichung: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/4HaTDuuQRlfOPDO0DAuZB6e95-uQPnYbXPwKiEazitY/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC90eGcyMDI2bmV3eWVhcjAzLnBuZw.png",
+      link: "https://trip.eztravel.com.tw/activity/vacation/txg/",
+      alt: "2026馬年迎春早鳥省",
+    },
+    small: [
+      {
+        title: "中部出發✨優惠特搜",
+        price: "1,980",
+        img: "https://image.cdn-eztravel.com.tw/mepkbGKWAjNx7vuLBHGhpUD-Rys8I82UIVMe36oa2_Q/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9UWEcyMDI1b25zYWxlXzc2OHg0MDAuanBn.jpg",
+        link: "https://trip.eztravel.com.tw/activity/onsale/txg/",
+        overlayText: "",
+      },
+      {
+        title: "離島度假超chill",
+        price: "3,999",
+        img: "https://image.cdn-eztravel.com.tw/VCSTD6xsqGeUHqQJhC-m5brf7aa3c_ceSqXlPuS5rfc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9NWkcwMDg2MS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/islands/txg/",
+        overlayText: "",
+      },
+      {
+        title: "全台療癒暖湯推薦",
+        price: "4,600",
+        img: "https://image.cdn-eztravel.com.tw/6TFw6VBoGr-Np1H9S1wfXUm4mGxi4jloDn9IwAR0U9M/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lNTA0LmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/season/txg/?p=txg2",
+        overlayText: "",
+      },
+      {
+        title: "阿里山🚂百年森鐵",
+        price: "4,950",
+        img: "https://image.cdn-eztravel.com.tw/b27bUohWOgEQb60GGJHxSQDww9kapFx2RqCfmC4bDso/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9UWEdFWjAwMDRfNzY4eDQwMC5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/alishanrailway/?p=alishanrailway1#subTag3",
+        overlayText: "",
+      },
+    ],
+  },
+
+  // 高雄出發
+  kaohsiung: {
+    large: {
+      img: "https://image.cdn-eztravel.com.tw/arAXITwt_uMQBbTYlWVJZAAkjB6dqbV2Nt09rqS7ykU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvcGFja2FnZTMvaW1hZ2VzL0dSVC8yMDI2Q05ZLTM5NXg2MDAuanBn.jpg",
+      link: "https://trip.eztravel.com.tw/activity/trip/khh/",
+      alt: "新春預購馬上省",
+    },
+    small: [
+      {
+        title: "冬遊澎湖✨領消費券500/人",
+        price: "3,990",
+        img: "https://image.cdn-eztravel.com.tw/5FDflq8wfdGXkImiS6zF2iLVPthh3ejU4Izxgn6gh4U/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9NWkcwMTE2M183Njh4NDAwLmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/offshoreislands/KHH/",
+        overlayText: "",
+      },
+      {
+        title: "好氣色養成秘笈大公開",
+        price: "5,190",
+        img: "https://image.cdn-eztravel.com.tw/QT5eic2YMUQXRfkGLVDUWP0Hl2gBjJSsbAHY3F8HIaA/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvcGFja2FnZTMvaW1hZ2VzL05ld0tISC9ob3RzcHJpbmctNDY4eDI4OC5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/hotspringtw/khh/",
+        overlayText: "",
+      },
+      {
+        title: "阿里山林鐵全線通車",
+        price: "5,990",
+        img: "https://image.cdn-eztravel.com.tw/YZqQxcCLLc583r3OBYyn_a5q5atHsJxnfSxlyvcAToc/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9DWUkwMDExMS5qcGc.jpg",
+        link: "https://trip.eztravel.com.tw/activity/alishanrailway/?p=alishanrailway#subTag4",
+        overlayText: "",
+      },
+      {
+        title: "親子夜宿初體驗",
+        price: "4,790",
+        img: "https://image.cdn-eztravel.com.tw/e9K8gG6Cutl2XTeEGifm3R0pQuSpt2-OK2ttUHT9c5Q/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly90cmlwLmNkbi1lenRyYXZlbC5jb20udHcvaW1nL0dSVC9ob21lMzU1LmpwZw.jpg",
+        link: "https://trip.eztravel.com.tw/activity/oceanparktw/khh/",
+        overlayText: "",
+      },
+    ],
+  },
+};
+
+// ==========================================
+// Alpine.js 邏輯設定 (整合日本與台灣)
+// ==========================================
+document.addEventListener("alpine:init", () => {
+  // 1. 原本的日本旅遊邏輯 (保持不變)
+  Alpine.data("japanTourApp", () => ({
+    activeTab: "recommend",
     navButtons: [
       { label: "精選推薦", key: "recommend" },
       { label: "北陸", key: "hokuriku" },
@@ -400,22 +676,10 @@ document.addEventListener("alpine:init", () => {
       { label: "沖繩", key: "okinawa" },
       { label: "高雄出發", key: "kaohsiung" },
     ],
-
-    // 3. 定義 CSS Grid 的 class 順序
-    // index 0 -> japan-L (左邊大圖)
-    // index 1 -> japan-M1
-    // index 2 -> japan-M2
-    // index 3 -> japan-M3
-    // index 4 -> japan-M4
     gridLayouts: ["japan-L", "japan-M1", "japan-M2", "japan-M3", "japan-M4"],
-
-    // 4. 獲取當前要顯示的資料 (Getter)
     get currentData() {
       const data = tourDatabase[this.activeTab];
-
-      // 防呆機制：如果該分類沒有資料，回傳 5 筆空的佔位資料，避免版面壞掉
       if (!data || data.length < 5) {
-        console.warn(`警告: ${this.activeTab} 資料不足 5 筆`);
         return Array(5).fill({
           title: "即將推出",
           desc: "敬請期待精彩行程",
@@ -424,113 +688,44 @@ document.addEventListener("alpine:init", () => {
           link: "javascript:void(0)",
         });
       }
-
       return data;
     },
   }));
-});
 
-const taiwanDatabase = {
-  // 1. 旅遊主打星
-  stars: {
-    // 左邊的大圖
-    large: {
-      img: "https://via.placeholder.com/600x400?text=Large+Image", // 填入大圖網址
-      link: "https://www.eztravel.com.tw/...", // 填入大圖連結
-      alt: "旅遊主打星大圖",
+  // 2. NEW: 台灣旅遊邏輯
+  Alpine.data("taiwanTourApp", () => ({
+    activeTab: "stars", // 預設顯示 '旅遊主打星'
+
+    // 定義按鈕與對應的資料 key
+    navButtons: [
+      { label: "旅遊主打星", key: "stars" },
+      { label: "環島遊", key: "island" },
+      { label: "東台灣", key: "east" },
+      { label: "西台灣", key: "west" },
+      { label: "澎湖金馬", key: "islands" },
+      { label: "台中出發", key: "taichung" },
+      { label: "高雄出發", key: "kaohsiung" },
+    ],
+
+    // 取得當前顯示的資料
+    get currentContent() {
+      // 防呆機制：如果找不到對應資料，回傳預設空資料
+      return (
+        taiwanDatabase[this.activeTab] || {
+          large: {
+            img: "https://via.placeholder.com/600x400?text=No+Data",
+            link: "#",
+            alt: "無資料",
+          },
+          small: Array(4).fill({
+            title: "行程規劃中",
+            price: "---",
+            img: "https://via.placeholder.com/300x200?text=Coming+Soon",
+            link: "#",
+            overlayText: "",
+          }),
+        }
+      );
     },
-    // 右邊的四個小圖 (陣列順序 0~3 對應 M1~M4)
-    small: [
-      {
-        title: "小圖標題1",
-        price: "1,200",
-        img: "https://via.placeholder.com/300x200?text=Small+1",
-        link: "#",
-      },
-      {
-        title: "小圖標題2",
-        price: "3,500",
-        img: "https://via.placeholder.com/300x200?text=Small+2",
-        link: "#",
-      },
-      {
-        title: "小圖標題3",
-        price: "2,800",
-        img: "https://via.placeholder.com/300x200?text=Small+3",
-        link: "#",
-      },
-      {
-        title: "小圖標題4",
-        price: "5,000",
-        img: "https://via.placeholder.com/300x200?text=Small+4",
-        link: "#",
-      },
-    ],
-  },
-
-  // 2. 環島遊
-  island: {
-    large: { img: "", link: "", alt: "環島遊大圖" },
-    small: [
-      { title: "環島行程A", price: "9,900", img: "", link: "" },
-      { title: "環島行程B", price: "8,800", img: "", link: "" },
-      { title: "環島行程C", price: "7,700", img: "", link: "" },
-      { title: "環島行程D", price: "6,600", img: "", link: "" },
-    ],
-  },
-
-  // 3. 東台灣
-  east: {
-    large: { img: "", link: "", alt: "" },
-    small: [
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-    ],
-  },
-
-  // 4. 西台灣
-  west: {
-    large: { img: "", link: "", alt: "" },
-    small: [
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-    ],
-  },
-
-  // 5. 澎湖金馬
-  islands: {
-    large: { img: "", link: "", alt: "" },
-    small: [
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-    ],
-  },
-
-  // 6. 台中出發
-  taichung: {
-    large: { img: "", link: "", alt: "" },
-    small: [
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-    ],
-  },
-
-  // 7. 高雄出發
-  kaohsiung: {
-    large: { img: "", link: "", alt: "" },
-    small: [
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-      { title: "", price: "", img: "", link: "" },
-    ],
-  },
-};
+  }));
+});

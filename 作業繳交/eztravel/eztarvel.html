@@ -143,17 +143,20 @@
         </div>
       </template>
     </section>
-    <section class="twmust-dos">
+    <section class="twmust-dos" x-data="taiwanTourApp">
       <h2 class="twmust-dos-title">寶島必玩</h2>
+
       <div class="twmust-dos-nav">
-        <button>旅遊主打星</button>
-        <button>環島遊</button>
-        <button>東台灣</button>
-        <button>西台灣</button>
-        <button>澎湖金馬</button>
-        <button>台中出發</button>
-        <button>高雄出發</button>
+        <template x-for="btn in navButtons" :key="btn.key">
+          <button
+            type="button"
+            @click="activeTab = btn.key"
+            :class="{ 'active': activeTab === btn.key }"
+            x-text="btn.label"
+          ></button>
+        </template>
       </div>
+
       <aside class="twmust-dos-aside">
         <div>
           <h4 class="twmust-aside-h4">大家都在找</h4>
@@ -245,6 +248,7 @@
             </li>
           </ul>
         </div>
+
         <div class="side-promo-slider">
           <div id="tw-track" class="slider-track"></div>
           <div id="tw-prev" class="slider-btn prev">
@@ -274,48 +278,43 @@
           <div id="tw-pagination" class="slider-pagination"></div>
         </div>
       </aside>
+
       <div class="twmust-dos-card">
         <div class="twmustL">
-          <a :href="">
-            <img :src="" :alt="" class="big-card-img" />
+          <a :href="currentContent.large.link">
+            <img
+              :src="currentContent.large.img"
+              :alt="currentContent.large.alt"
+              class="big-card-img"
+            />
           </a>
         </div>
-        <div class="twmustM twmustM1">
-          <a href="">
-            <div class=""><img src="" alt="" /></div>
-            <div class="twmustM-p">
-              <h3 class="description twmustM-h3"></h3>
-              <p class="price"><span class="price-NTD"></span>起</p>
-            </div>
-          </a>
-        </div>
-        <div class="twmustM twmustM2">
-          <a href="">
-            <div class=""><img src="" alt="" /></div>
-            <div class="twmustM-p">
-              <h3 class="description twmustM-h3"></h3>
-              <p class="price"><span class="price-NTD"></span>起</p>
-            </div>
-          </a>
-        </div>
-        <div class="twmustM twmustM3">
-          <a href="">
-            <div class=""><img src="" alt="" /></div>
-            <div class="twmustM-p">
-              <h3 class="description twmustM-h3"></h3>
-              <p class="price"><span class="price-NTD"></span>起</p>
-            </div>
-          </a>
-        </div>
-        <div class="twmustM twmustM4">
-          <a href="">
-            <div class=""><img src="" alt="" /></div>
-            <div class="twmustM-p">
-              <h3 class="description twmustM-h3"></h3>
-              <p class="price"><span class="price-NTD"></span>起</p>
-            </div>
-          </a>
-        </div>
+
+        <template x-for="(item, index) in currentContent.small" :key="index">
+          <div :class="['twmustM', 'twmustM' + (index + 1)]">
+            <a :href="item.link">
+              <div
+                class="twmustM-img-box"
+                :class="{ 'pose-rel': item.overlayText }"
+              >
+                <img :src="item.img" :alt="item.title" />
+
+                <span
+                  class="twmust-overlay-text"
+                  x-text="item.overlayText"
+                  x-show="item.overlayText"
+                ></span>
+              </div>
+
+              <div class="twmustM-p">
+                <h3 class="description twmustM-h3" x-text="item.title"></h3>
+                <p class="price">
+                  <span class="price-NTD" x-text="item.price"></span>起
+                </p>
+              </div>
+            </a>
+          </div>
+        </template>
       </div>
       <div class="twmust-dos-more">
         <a href="//trip.eztravel.com.tw/"
@@ -334,5 +333,3 @@
     </section>
   </body>
 </html>
-twmust-dos-nav裡面按鈕tab
-然後twmustL的a連結及img還有twmustM1～twmustM4的a連結及img h3及span價格

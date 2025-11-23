@@ -349,6 +349,23 @@ h2 {
   overflow: hidden;
   transition: all 0.4s;
   position: relative;
+  flex-direction: column;
+  background: #fff;
+  text-decoration: none;
+}
+.twmustM-img-box {
+  width: 100%;
+  height: 121px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.twmustM-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .twmustM-p {
   background-color: #fafafa;
@@ -362,6 +379,22 @@ h2 {
 }
 .twmustM-h3 + .price {
   text-align: right;
+}
+
+.twmust-overlay-text {
+  z-index: 2;
+  pointer-events: none;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
 }
 .price {
   color: #222;
