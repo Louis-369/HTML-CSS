@@ -396,11 +396,19 @@ h2 {
   white-space: nowrap;
   font-size: 16px;
 }
-.price {
+.price2 {
   color: #222;
+  text-align: right;
 }
 .twmustL:hover,
 .twmustM:hover {
   position: relative;
   box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+}
+.price-NTD-g {
+  color: #ff8b00;
+  margin-right: 5px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
 }
