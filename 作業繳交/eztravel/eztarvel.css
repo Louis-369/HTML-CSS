@@ -84,6 +84,26 @@ h2 {
 .hot-M2 {
   grid-area: 3/3/5/4;
 }
+.hot-L:hover {
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+}
+.hot-M1:hover {
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+}
+.hot-S1:hover {
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+}
+.hot-S2:hover {
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+}
+.hot-M2:hover {
+  position: relative;
+  box-shadow: 0 3px 15px 0 rgba(34, 34, 34, 0.15);
+}
 .hot-side {
   grid-area: 2/4/5/5;
   display: flex;
